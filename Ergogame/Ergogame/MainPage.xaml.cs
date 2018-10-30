@@ -13,5 +13,10 @@ namespace Ergogame
         {
             InitializeComponent();
         }
+
+        private void Login(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -2,13 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Ergogame"
-             x:Class="Ergogame.MainPage">
+             x:Class="Ergogame.MainPage" BackgroundColor="#114B5F">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+   <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand"  HorizontalOptions="Center">
+            <Label Text="Email" />
+            <Entry x:Name="UsernameEntry" Placeholder="User email" />
+            <Label Text="Password" />
+            <Entry x:Name="PasswordEntry" IsPassword="true" />
+            <Button Text="Login" BackgroundColor="#E4FDE1" TextColor="#114B5F" Clicked="Login"/>
+           </StackLayout>
+    </ContentPage.Content>
 
 </ContentPage>
