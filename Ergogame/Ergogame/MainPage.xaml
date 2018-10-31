@@ -7,9 +7,9 @@
    <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand"  HorizontalOptions="Center">
             <Label Text="Email" />
-            <Entry x:Name="UsernameEntry" Placeholder="User email" />
+            <Entry x:Name="UsernameEntry" Placeholder="User Email"/>
             <Label Text="Password" />
-            <Entry x:Name="PasswordEntry" IsPassword="true" />
+            <Entry x:Name="PasswordEntry" IsPassword="true" Placeholder="PassWord" />
             <Button Text="Login" BackgroundColor="#E4FDE1" TextColor="#114B5F" Clicked="Login"/>
            </StackLayout>
     </ContentPage.Content>
