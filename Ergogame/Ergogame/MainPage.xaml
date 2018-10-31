@@ -7,13 +7,13 @@
    <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand"  HorizontalOptions="Center">
             
-            <Label Text="Login" FontSize="30" TextColor="#E4FDE1" Margin="120,0,0,0"/>
-            <BoxView WidthRequest="300" />
-            <Label Text="Email" TextColor="#E4FDE1"/>
-            <Entry x:Name="UsernameEntry" Placeholder="User Email" TextColor="lightGray"/>
+            <Label Text="Login" FontSize="70" TextColor="#E4FDE1" Margin="180,0,0,0"/>
+            <BoxView WidthRequest="500" />
+            <Label Text="Email" FontSize="30" TextColor="#456990" />
+            <Entry x:Name="UsernameEntry" Placeholder="User Email" TextColor="lightGray" PlaceholderColor="LightGray"/>
 
-            <Label Text="Password" TextColor="#E4FDE1"/>
-            <Entry x:Name="PasswordEntry" IsPassword="true" Placeholder="PassWord" TextColor="lightGray"/>
+            <Label Text="Password" FontSize="30" TextColor="#456990"/>
+            <Entry x:Name="PasswordEntry" IsPassword="true" Placeholder="PassWord" TextColor="lightGray" PlaceholderColor="LightGray"/>
           
             <Grid VerticalOptions="Center" WidthRequest="200">
                 <Grid.RowDefinitions>
@@ -22,8 +22,8 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="0" Grid.Column="0" Text="Login" HorizontalOptions="Center" WidthRequest="300" BackgroundColor="#E4FDE1" TextColor="#114B5F" Clicked="Login"/>
-                <Image Grid.Row="0" Grid.Column="0" Source="writeicon.png" HorizontalOptions="Start" Margin="85,0,0,0"/>
+                <Button Grid.Row="0" Grid.Column="0" FontSize="30" Text="Login" HorizontalOptions="Center" WidthRequest="500" BackgroundColor="#E4FDE1" TextColor="#114B5F" CornerRadius="5" Clicked="Login"/>
+                <Image Grid.Row="0" Grid.Column="0" Source="writeicon.png" HorizontalOptions="Start" Margin="170,0,0,0"/>
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Login"/>
                 </Grid.GestureRecognizers>
