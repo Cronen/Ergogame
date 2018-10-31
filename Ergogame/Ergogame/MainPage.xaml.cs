@@ -21,7 +21,8 @@ namespace Ergogame
 
         private async void Login(object sender, EventArgs eventArgs)
         {
-            if ("admin".Equals(User.Email) && "123".Equals(User.Password))
+            User user = new User(UsernameEntry.Text, PasswordEntry.Text);
+            if (user.Email == "admin" && user.Password == "123")
             {
                 //Session["user"] = new User() { UserName = username, Password = "123" };
                 //return RedirectToAction("Index", "Home");
