@@ -12,7 +12,9 @@
             <Color x:Key="lightgreenColor">#028090</Color>
             <Color x:Key="yellowColor">#E4FDE1</Color>
             <Color x:Key="blueColor">#456990</Color>
+            <Color x:Key="lightblueColor">#6799AE</Color>
             <Color x:Key="redColor">#F45B69</Color>
+            
 
             //GENERAL BUTTON STYLE
             <Style x:Key="GeneralButtonStyle" TargetType="Button">
