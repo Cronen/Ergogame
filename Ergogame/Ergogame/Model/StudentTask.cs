@@ -9,7 +9,7 @@ namespace Ergogame.Model
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public string theDate {
-            get { return Date.ToString("yyyy.MM.dd");}
+            get { return Date.ToString("dd.MM.yyyy");}
             private set { }
         }
         public string Description { get; set; }
