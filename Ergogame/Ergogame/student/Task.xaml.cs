@@ -29,7 +29,7 @@ namespace Ergogame.student
             List<StudentTask> reList = new List<StudentTask>();
             reList.Add(new StudentTask("Task 1", DateTime.Now));
             reList.Add(new StudentTask("Task 2", DateTime.Now));
-            reList.Add(new StudentTask("Task 3", DateTime.Now));
+            reList.Add(new StudentTask("Dysfagi", DateTime.Now));
             return reList;
         }
     }
