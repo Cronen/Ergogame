@@ -22,14 +22,9 @@ namespace Ergogame
             User user = new User(UsernameEntry.Text, PasswordEntry.Text);
             if (user.Email == "admin" && user.Password == "123")
             {
-
                 await this.Navigation.PushModalAsync(new student.Task());
-             
             }
-
-
-
-
+            
         }
     }
 }
