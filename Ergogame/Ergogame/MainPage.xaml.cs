@@ -24,6 +24,12 @@ namespace Ergogame
             {
                 await this.Navigation.PushModalAsync(new student.Task());
             }
+            else
+            {
+                await DisplayAlert("Wrong Login", "Try again", "OK");
+                UsernameEntry.Text = "";
+                PasswordEntry.Text = "";
+            }
             
         }
     }
