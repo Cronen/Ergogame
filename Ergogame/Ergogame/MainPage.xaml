@@ -5,7 +5,7 @@
              x:Class="Ergogame.MainPage" BackgroundColor="#114B5F">
 
    <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand"  HorizontalOptions="Center">
+        <StackLayout VerticalOptions="Center"  HorizontalOptions="Center">
             <Label Text="Login" FontSize="30" TextColor="#E4FDE1" Margin="50,0,0,0"/>
             <BoxView WidthRequest="175" />
             <Label Text="Email" />

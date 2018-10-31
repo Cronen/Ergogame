@@ -18,10 +18,11 @@ namespace Ergogame.student
             BindingContext = GenerateDummyData();
 			InitializeComponent ();
 		}
-        private void Task_Tabbed(object sender, ItemTappedEventArgs e)
+        private async void Task_Tabbed(object sender, ItemTappedEventArgs e)
         {
             StudentTask st = (StudentTask)e.Item;
             //Add nav to sent to specific task page
+            await this.Navigation.PushModalAsync(new student.TaskDetailPageDetail());
         }
         private List<StudentTask> GenerateDummyData()
         {
