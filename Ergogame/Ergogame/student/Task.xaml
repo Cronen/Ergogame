@@ -10,6 +10,10 @@
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             </Style>
+            <Style x:Key="ListviewText" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="24" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -33,16 +37,16 @@
                     <Label Text="Completed TASK" Style="{StaticResource MenuItem}" TextColor="Black"/>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="White">
-                <Label Text="Tasks" TextColor="Black"/>
+            <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="White" VerticalOptions="Center" Margin="50,100,0,0">
+                <Label Text="Tasks" TextColor="Black" FontSize="46"/>
                 <ListView ItemsSource="{Binding}" ItemTapped="Task_Tabbed" SeparatorColor="LightGray">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-                                    <Label Text="{Binding theDate}" TextColor="Black"/>
-                                    <Label Text=" | " TextColor="Black"/>
-                                    <Label Text="{Binding Name}" TextColor="Black"/>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="10,0,0,0">
+                                    <Label Text="{Binding theDate}" Style="{StaticResource ListviewText}"/>
+                                    <Label Text=" | " Style="{StaticResource ListviewText}"/>
+                                    <Label Text="{Binding Name}" Style="{StaticResource ListviewText}"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
