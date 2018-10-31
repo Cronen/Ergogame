@@ -24,19 +24,19 @@
             </Style>
 
             //BUTTON STYLES FOR FORWARD
-            <Style x:Key="GeneralButtonStyle" TargetType="Button">
+            <Style x:Key="ForwardButtonStyle" TargetType="Button" BasedOn="{StaticResource GeneralButtonStyle}">
                 <Setter Property="TextColor" Value="{StaticResource whiteColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource lightgreenColor}" />
             </Style>
 
             //BUTTON STYLES FOR SUBMIT
-            <Style x:Key="SubmitButtonStyle" TargetType="Button">
+            <Style x:Key="SubmitButtonStyle" TargetType="Button" BasedOn="{StaticResource GeneralButtonStyle}">
                 <Setter Property="TextColor" Value="{StaticResource whiteColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource greyColor}" />
             </Style>
 
             //GENERAL TAB STYLE
-            <Style x:Key="GeneralTabStyle" TargetType="Button" BasedOn="{StaticResource GeneralButtonStyle}">
+            <Style x:Key="GeneralTabStyle" TargetType="Button">
                 <Setter Property="HeightRequest" Value="200" />
                 <Setter Property="FontSize" Value="30" />
                 <Setter Property="HorizontalOptions" Value="Center" />
