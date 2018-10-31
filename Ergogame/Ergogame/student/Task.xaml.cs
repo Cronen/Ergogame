@@ -16,6 +16,7 @@ namespace Ergogame.student
 		public Task ()
 		{
             BindingContext = GenerateDummyData();
+            int inttest = 1;
 			InitializeComponent ();
 		}
         private async void Task_Tabbed(object sender, ItemTappedEventArgs e)
