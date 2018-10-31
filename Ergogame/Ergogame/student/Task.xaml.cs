@@ -23,7 +23,7 @@ namespace Ergogame.student
         {
             StudentTask st = (StudentTask)e.Item;
             //Add nav to sent to specific task page
-            await this.Navigation.PushModalAsync(new student.TaskDetailPageDetail());
+            await this.Navigation.PushModalAsync(new student.TaskDetailPage());
         }
         private List<StudentTask> GenerateDummyData()
         {
