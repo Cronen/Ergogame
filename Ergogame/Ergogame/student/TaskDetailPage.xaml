@@ -11,18 +11,40 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <StackLayout Grid.Column="0" Grid.Row="0" >
-                <Label Text="Dysfagi"></Label>
-                <Label Text="Description"></Label>
-                <Label Text="Lorem ipisum"></Label>
-            </StackLayout>
-            <StackLayout Grid.Column="1" Grid.Row="0">
-                <StackLayout WidthRequest="75">
-                    <Button ContentLayout="right,0" HeightRequest="75" WidthRequest="175"   HorizontalOptions="CenterAndExpand"  Text="Next" Image="arrowleftwhite.png"></Button>
+            <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="#fff">
+                <StackLayout HeightRequest="75" Margin="50, 30, 20, 50">
+                    <Label Text="Dysfagi"></Label>
                 </StackLayout>
-            </StackLayout>
 
-         
+                <StackLayout MinimumHeightRequest="150" Margin="50, 30, 20, 50">
+                    <Label Text="Description"></Label>
+                    <Label Text="Lorem ipisum"></Label>
+                </StackLayout>
+
+            </StackLayout>
+            <StackLayout Grid.Column="1" Grid.Row="0" Padding="100, 50, 100, 20">
+                <ScrollView>
+                    <StackLayout>
+                        <FlexLayout Direction="Row" JustifyContent="SpaceBetween" AlignContent="Center">
+                            <StackLayout>
+                                <Label Text="Clinical dialog"></Label>
+                                <Label Text="Patient info"></Label>
+                                <Label Text="Name: John Doe"></Label>
+                                <Label Text="Age: 47"></Label>
+                            </StackLayout>
+                            <Image Source="pexelsphoto25682.png" HeightRequest="145"></Image>
+
+                        </FlexLayout>
+                        <StackLayout>
+                            <Label Text="Patient log"></Label>
+                            <Label Text="lorem uipums"></Label>
+                        </StackLayout>
+                        <StackLayout WidthRequest="75">
+                            <Button ContentLayout="right,0" HeightRequest="75" WidthRequest="175"   HorizontalOptions="CenterAndExpand"  Text="Next" Image="arrowleftwhite.png"></Button>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
