@@ -16,7 +16,6 @@ namespace Ergogame.student
 		public Task ()
 		{
             BindingContext = GenerateDummyData();
-            int inttest = 1;
 			InitializeComponent ();
 		}
         private async void Task_Tabbed(object sender, ItemTappedEventArgs e)
@@ -32,6 +31,11 @@ namespace Ergogame.student
             reList.Add(new StudentTask("Task 2", DateTime.Now));
             reList.Add(new StudentTask("Dysfagi", DateTime.Now));
             return reList;
+        }
+
+        private async void OnClosedTap(object sender, EventArgs e)
+        {
+            await this.Navigation.PushModalAsync(new ClosedTasks(), false);
         }
     }
 }
