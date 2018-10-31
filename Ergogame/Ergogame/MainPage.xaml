@@ -2,17 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Ergogame"
-             x:Class="Ergogame.MainPage" BackgroundColor="#114B5F">
+             x:Class="Ergogame.MainPage" BackgroundColor="#114B5F" BackgroundImage="backgroundimagepattern.jpg">
 
    <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand"  HorizontalOptions="Center">
-            
-            <Label Text="Login" FontSize="70" TextColor="#E4FDE1" Margin="180,0,0,0"/>
+
+            <Label Text="Login" FontSize="70" TextColor="{StaticResource whiteColor}" Margin="180,0,0,0"/>
             <BoxView WidthRequest="500" />
-            <Label Text="Email" FontSize="30" TextColor="#456990" />
+            <Label Text="Email" FontSize="30" TextColor="{StaticResource lightblueColor}" />
             <Entry x:Name="UsernameEntry" Placeholder="User Email" TextColor="lightGray" PlaceholderColor="LightGray"/>
 
-            <Label Text="Password" FontSize="30" TextColor="#456990"/>
+            <Label Text="Password" FontSize="30" TextColor="{StaticResource lightblueColor}"/>
             <Entry x:Name="PasswordEntry" IsPassword="true" Placeholder="PassWord" TextColor="lightGray" PlaceholderColor="LightGray"/>
           
             <Grid VerticalOptions="Center" WidthRequest="200">
