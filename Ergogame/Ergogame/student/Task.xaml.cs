@@ -32,5 +32,10 @@ namespace Ergogame.student
             reList.Add(new StudentTask("Dysfagi", DateTime.Now));
             return reList;
         }
+
+        private async void OnClosedTap(object sender, EventArgs e)
+        {
+            await this.Navigation.PushModalAsync(new ClosedTasks(), false);
+        }
     }
 }
