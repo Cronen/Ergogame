@@ -18,18 +18,24 @@ namespace Ergogame.student
             BindingContext = GenerateDummyData();
 			InitializeComponent ();
 		}
-        private void Task_Tabbed(object sender, ItemTappedEventArgs e)
+        private async void Task_Tabbed(object sender, ItemTappedEventArgs e)
         {
             StudentTask st = (StudentTask)e.Item;
             //Add nav to sent to specific task page
+            await this.Navigation.PushModalAsync(new student.TaskDetailPage());
         }
         private List<StudentTask> GenerateDummyData()
         {
             List<StudentTask> reList = new List<StudentTask>();
             reList.Add(new StudentTask("Task 1", DateTime.Now));
             reList.Add(new StudentTask("Task 2", DateTime.Now));
-            reList.Add(new StudentTask("Task 3", DateTime.Now));
+            reList.Add(new StudentTask("Dysfagi", DateTime.Now));
             return reList;
+        }
+
+        private async void OnClosedTap(object sender, EventArgs e)
+        {
+            await this.Navigation.PushModalAsync(new ClosedTasks(), false);
         }
     }
 }
