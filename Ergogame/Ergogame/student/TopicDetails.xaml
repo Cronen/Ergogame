@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ergogame.student.TopicDetails">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ListviewLink" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource lightgreenColor}" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+            <Style x:Key="Headline" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource blueColor}" />
+                <Setter Property="FontSize" Value="26" />
+            </Style>
+            <Style x:Key="Description" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource blueColor}" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="#f2f2f2"  Padding="25,40,0,0">
+                <Label x:Name="LB_TopicName" Style="{StaticResource Headline}" FontSize="30"/>
+
+                <Label Text="Materials" Style="{StaticResource Headline}" Margin="0,30,0,0"/>
+                <ListView x:Name="LV_Materials" ItemsSource="{Binding}" SeparatorColor="{StaticResource lightgreenColor}" Margin="0,0,85,0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="Center" Margin="0,15,0,0">
+                                    <Label Text="{Binding MatName}" Style="{StaticResource ListviewLink}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Grid.Row="0" Grid.Column="1" Margin="85,75,85,0">
+                <Label Text="Description" Style="{StaticResource Headline}"/>
+                <Label x:Name="LB_Desc" Style="{StaticResource Description}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

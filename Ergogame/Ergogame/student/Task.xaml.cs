@@ -20,16 +20,29 @@ namespace Ergogame.student
 		}
         private async void Task_Tabbed(object sender, ItemTappedEventArgs e)
         {
-            StudentTask st = (StudentTask)e.Item;
+            ITask item = (ITask)e.Item;
             //Add nav to sent to specific task page
-            await this.Navigation.PushModalAsync(new student.TaskDetailPage());
+            if (item.GetType().Equals(typeof(StudentTask)))
+            {
+                await this.Navigation.PushModalAsync(new student.TaskDetailPage());
+
+            }
+            else if ((item.GetType().Equals(typeof(TopicTask))))
+            {
+                await this.Navigation.PushModalAsync(new TopicDetails((TopicTask)item));
+            }
+            else
+            {
+                await DisplayAlert("Error", "Something went wrong, try again", "OK");
+            }
         }
-        private List<StudentTask> GenerateDummyData()
+        private List<ITask> GenerateDummyData()
         {
-            List<StudentTask> reList = new List<StudentTask>();
-            reList.Add(new StudentTask("Task 1", DateTime.Now));
-            reList.Add(new StudentTask("Task 2", DateTime.Now));
+            List<ITask> reList = new List<ITask>();
+            reList.Add(new StudentTask("Exercise 1", DateTime.Now));
+            reList.Add(new TopicTask("Topic 1", DateTime.Now));
             reList.Add(new StudentTask("Dysfagi", DateTime.Now));
+            reList.Add(new TopicTask("Topic 2", DateTime.Now));
             return reList;
         }
 
