@@ -37,5 +37,10 @@ namespace Ergogame.student
 
             return new TopicTask("Topic 1", DateTime.Now.AddDays(1));
         }
+
+        private async void OnBack(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
     }
 }

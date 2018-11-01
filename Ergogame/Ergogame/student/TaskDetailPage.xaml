@@ -22,7 +22,7 @@
                     <Label Text="Description" FontSize="22" TextColor="{StaticResource darkgreenColor}"></Label>
                     <Label  Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor ut felis posuere ornare quis a tellus. Orci varius natoque penatibus et magnis dis parturient Orci varius natoque penatibus et magnis dis parturientOrci varius natoque penatibus et magnis dis parturientOrci varius natoque penatibus et magnis dis parturient"></Label>
                 </StackLayout>
-
+                <Button BackgroundColor="{StaticResource lightgreenColor }" TextColor="{StaticResource whiteColor}" HeightRequest="50" WidthRequest="175"   HorizontalOptions="Center" VerticalOptions="End" Text="Back" Margin="0,0,0,10" Clicked="OnBack"/>
             </StackLayout>
             <StackLayout  Grid.Column="1" Grid.Row="0" Padding="150, 50, 150, 20" BackgroundColor="#fdfdfd" >
                 <ScrollView>

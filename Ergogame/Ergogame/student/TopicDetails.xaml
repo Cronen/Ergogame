@@ -28,11 +28,11 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
-            <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="White"  Padding="25,40,0,0">
+            <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="White"  Padding="25,40,25,0">
                 <Label x:Name="LB_TopicName" Style="{StaticResource Headline}" FontSize="30"/>
 
                 <Label Text="Materials" Style="{StaticResource Headline}" Margin="0,30,0,0"/>
-                <ListView x:Name="LV_Materials" ItemsSource="{Binding}" SeparatorColor="{StaticResource lightgreenColor}" Margin="0,0,85,0">
+                <ListView x:Name="LV_Materials" ItemsSource="{Binding}" SeparatorColor="{StaticResource lightgreenColor}" Margin="0,0,50,0">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -43,6 +43,8 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                <Button BackgroundColor="{StaticResource lightgreenColor }" TextColor="{StaticResource whiteColor}" HeightRequest="50" WidthRequest="175"   HorizontalOptions="Center" VerticalOptions="End" Text="Back" Margin="0,0,0,50" Clicked="OnBack"/>
+
             </StackLayout>
             <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource bgColor}" Margin="85,75,85,0">
                 <Label Text="Description" Style="{StaticResource Headline}"/>
