@@ -31,7 +31,7 @@ namespace Ergogame
                 {
                     if (user.Email == "teacher" && user.Password == "123")
                     {
-                        await this.Navigation.PushModalAsync(new teacher.CreateTask());
+                        await Navigation.PushModalAsync(new teacher.SelectSemester());
                     }
 
                     else

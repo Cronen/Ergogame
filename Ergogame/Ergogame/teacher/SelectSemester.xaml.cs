@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Ergogame.teacher
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class CreateTask : ContentPage
+	public partial class SelectSemester : ContentPage
 	{
-		public CreateTask ()
+		public SelectSemester ()
 		{
 			InitializeComponent ();
 		}

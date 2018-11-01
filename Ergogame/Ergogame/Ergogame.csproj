@@ -23,7 +23,7 @@
     <EmbeddedResource Update="student\TaskDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="teacher\CreateTask.xaml">
+    <EmbeddedResource Update="teacher\SelectSemester.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
