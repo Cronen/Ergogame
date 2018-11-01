@@ -45,10 +45,13 @@ namespace Ergogame.student
             reList.Add(new TopicTask("Topic 2", DateTime.Now));
             return reList;
         }
-
         private async void OnClosedTap(object sender, EventArgs e)
         {
             await this.Navigation.PushModalAsync(new ClosedTasks(), false);
+        }
+        private async void OnCompletedTap(object sender, EventArgs e)
+        {
+            await this.Navigation.PushModalAsync(new CompletedTask(), false);
         }
     }
 }
