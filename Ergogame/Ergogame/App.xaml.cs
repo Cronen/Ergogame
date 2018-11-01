@@ -1,4 +1,5 @@
 ﻿using System;
+using Ergogame.student;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

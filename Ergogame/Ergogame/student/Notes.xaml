@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ergogame.student.Notes">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="MenuItem" TargetType="Label">
+                <Setter Property="TextColor" Value="#114b5f" />
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="Margin" Value="0,15,0,0" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+           
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    <ContentPage.Content >
+        <Grid BackgroundColor="{StaticResource greyColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+               
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" BackgroundColor="{StaticResource whiteColor }" Padding="0" Margin="0" >
+                <StackLayout HeightRequest="70"  VerticalOptions="Start">
+                   <Label Text="Notes" Style="{StaticResource MenuItem}" FontSize="35" />
+                </StackLayout>
+
+                <StackLayout HeightRequest="70" VerticalOptions="Start" >
+                   <Label Text="Task description" Style="{StaticResource MenuItem}"/>
+                 </StackLayout>
+
+                <BoxView HeightRequest="0.5" Color="LightGray"/>
+                <StackLayout HeightRequest="70" VerticalOptions="Start"  BackgroundColor="#028090" >
+                    <Label Text="My notes"  Style="{StaticResource MenuItem}" TextColor="White"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer  NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <BoxView HeightRequest="0.5" Color="LightGray"/>
+
+                <StackLayout HeightRequest="70" VerticalOptions="Start" >
+                    <Label Text="Feedback" Style="{StaticResource MenuItem}"/>
+                </StackLayout>
+
+                <BoxView HeightRequest="0.5" Color="LightGray"/>
+
+                <StackLayout HeightRequest="80" VerticalOptions="Start" >
+                    <Label Text="Solution" Style="{StaticResource MenuItem}"/>
+                </StackLayout>
+
+                <StackLayout HeightRequest="80" VerticalOptions="EndAndExpand">
+                    <Button Text="Back to tasks" Style="{StaticResource MenuItem}" BackgroundColor="#028090" TextColor="White" CornerRadius="5"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="0" Grid.Column="1">
+               <FlexLayout  BackgroundColor="White" VerticalOptions="Start" Margin="30,0,0,0">
+                    <Button x:Name="Room1" Text="Room 1" FontSize="14" Margin="0,25,0,0" TextColor="White" BackgroundColor="#028090" BorderWidth="1" BorderColor="#028090" WidthRequest="150">
+                        </Button>
+                    <Button x:Name="Room2" Text="Room 2" FontSize="14" Margin="0,25,0,0" TextColor="#028090" BackgroundColor="White" BorderWidth="1" BorderColor="#028090" WidthRequest="150">
+                        </Button>
+                    <Button x:Name="Room3" Text="Room 3" FontSize="14" Margin="0,25,0,0" TextColor="#028090" BackgroundColor="White" BorderWidth="1" BorderColor="#028090" WidthRequest="150">
+                        </Button>
+                   </FlexLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1"  Grid.Column="1" Margin="25,0,100,0">
+                <Editor TextColor="#028090" Text="Lorem ipsum dolor sit amet, amet nullam ipsum, proin sed ac et, lobortis quis wisi amet ac, imperdiet elit nunc, aenean maecenas sit hymenaeos vitae. Non non sociis vitae libero. Orci et laoreet metus ut. Pellentesque eu, suspendisse libero feugiat eleifend maecenas, lectus mauris sapien elit posuere nec dignissim, ut a dolor consectetuer. Pellentesque interdum tellus vestibulum libero orci nec, gravida ut nunc pellentesque ut fusce felis, luctus justo mattis maecenas potenti. Faucibus est volutpat dictum molestie tempor elementum, eleifend aliquam donec, libero augue mauris purus vestibulum purus aptent, donec in enim aliquam morbi massa orci, tincidunt eget eget ullamcorper nulla quis.">
+                </Editor>
+               </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="1" Margin="25,0,100,0">
+                <Label Text="Feedback" TextColor="#028090" FontSize="25"/>
+                <Label FontSize="18" TextColor="#028090" Text="Vitae aliquam aenean suscipit. At consectetuer distinctio amet sit vitae at. Enim tortor nec integer aenean gravida rutrum, maecenas ornare tristique, in eu lobortis lectus pellentesque. Voluptate lacinia ornare varius diam nam, mollis justo, tellus et in. Justo omnis."/>
+
+            </StackLayout>
+
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
