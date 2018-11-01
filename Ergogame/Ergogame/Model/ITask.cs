@@ -11,5 +11,6 @@ namespace Ergogame.Model
         string theDate { get; set; }
         string Description { get; set; }
         bool Open { get; set; }
+        DateTime Completed { get; set; }
     }
 }

@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Ergogame.student.ClosedTasks">
+             x:Class="Ergogame.student.TaskList">
     <ContentPage.Resources>
         <ResourceDictionary>
+            <Color x:Key="lightbgColor">#028090</Color>
+            <Color x:Key="DarkMain">#456990</Color>
             <Style x:Key="MenuItem" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource blueColor}" />
                 <Setter Property="FontSize" Value="22" />
@@ -19,6 +21,12 @@
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Margin" Value="0,40,0,0" />
             </Style>
+            <Style x:Key="Arrow" TargetType="Image">
+                <Setter Property="Source" Value="arrowleftblue.png" />
+            </Style>
+            <Style x:Key="NoArrow" TargetType="Image">
+                <Setter Property="Source" Value="" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -31,30 +39,34 @@
                 <ColumnDefinition Width="4*" />
             </Grid.ColumnDefinitions>
             <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="White" Padding="0" Margin="0">
-                <StackLayout HeightRequest="150" VerticalOptions="Start">
-                    <Image Source="lock.png" Style="{StaticResource MenuImg}"/>
-                    <Label Text="OPEN TASK" Style="{StaticResource MenuItem}"/>
+                <StackLayout x:Name="SL_open" BackgroundColor="{StaticResource lightgreenColor}" HeightRequest="150" VerticalOptions="Start">
+                    <Image x:Name="Img_open" Source="list.png" Style="{StaticResource MenuImg}"/>
+                    <Label x:Name="LB_open" Text="OPEN TASK" Style="{StaticResource MenuItem}"  TextColor="White"/>
+                    <BoxView HeightRequest="1" Color="{StaticResource lightgreenColor}" VerticalOptions="End" Margin="0,25,0,0"/>
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnOpenTap" NumberOfTapsRequired="1"/>
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
-                <StackLayout HeightRequest="150" VerticalOptions="Start" BackgroundColor="#028090">
+                <StackLayout x:Name="SL_Closed" HeightRequest="150" VerticalOptions="Start" Margin="0">
                     <Image Source="lock.png" Style="{StaticResource MenuImg}"/>
-                    <Label Text="Closed TASK" Style="{StaticResource MenuItem}" TextColor="White"/>
-                </StackLayout>
-                <BoxView HeightRequest="1" Color="LightGray"/>
-                <StackLayout HeightRequest="150" VerticalOptions="Start">
-                    <Image Source="checksquare.png" Style="{StaticResource MenuImg}"/>
-                    <Label Text="Completed TASK" Style="{StaticResource MenuItem}"/>
+                    <Label x:Name="LB_Closed" Text="Closed TASK" Style="{StaticResource MenuItem}"/>
+                    <BoxView HeightRequest="1" Color="{StaticResource lightgreenColor}" VerticalOptions="End" Margin="0,25,0,0"/>
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnCompletedTap"  NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Tapped="OnClosedTap" NumberOfTapsRequired="1"/>
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
-                <BoxView HeightRequest="1" Color="LightGray"/>
+                <StackLayout x:Name="SL_Completed" HeightRequest="150" VerticalOptions="Start" Margin="0">
+                    <Image Source="checksquare.png" Style="{StaticResource MenuImg}"/>
+                    <Label x:Name="LB_Completed" Text="Completed TASK" Style="{StaticResource MenuItem}"/>
+                    <BoxView HeightRequest="1" Color="{StaticResource lightgreenColor}" VerticalOptions="End" Margin="0,25,0,0"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCompletedTap" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
             </StackLayout>
-            <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource bgColor}" VerticalOptions="Start" Margin="65,75,65,20">
+            <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource bgColor}" VerticalOptions="StartAndExpand" Margin="65,75,65,0">
                 <Label Text="Tasks" TextColor="#114b5f" FontSize="46" Margin="0,0,0,25"/>
-                <ListView ItemsSource="{Binding}" SeparatorColor="LightGray" RowHeight="65">
+                <ListView x:Name="LV_Mainlist" ItemsSource="{Binding}" ItemTapped="TaskTabbed" SeparatorColor="LightGray" RowHeight="65">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -62,6 +74,7 @@
                                     <Label Text="{Binding theDate}" Style="{StaticResource ListviewText}"/>
                                     <Label Text="  |  " Style="{StaticResource ListviewText}"/>
                                     <Label Text="{Binding Name}" Style="{StaticResource ListviewText}"/>
+                                    <Image x:Name="VC_Image" Style="{DynamicResource ImageSource}" HorizontalOptions="EndAndExpand"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

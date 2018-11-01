@@ -16,6 +16,8 @@ namespace Ergogame.Model
         public string Description { get; set; }
         public List<Material> Materials { get; set; }
         public bool Open { get; set; }
+        public DateTime Completed { get; set; }
+
         public TopicTask(string name, DateTime date) : this(name, date, true)
         {
         }

@@ -15,6 +15,8 @@ namespace Ergogame.Model
         public string Description { get; set; }
         public List<string> Exercises { get; set; }
         public bool Open { get; set; }
+        public DateTime Completed { get; set; }
+
         public StudentTask(string name, DateTime date): this(name, date, true)
         {
         }

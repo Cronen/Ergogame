@@ -14,6 +14,7 @@ namespace Ergogame
     {
         public MainPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
         }
 
@@ -23,7 +24,8 @@ namespace Ergogame
 
              if (user.Email == "admin" && user.Password == "123")
                 {
-                    await this.Navigation.PushModalAsync(new student.Task());
+                    Navigation.InsertPageBefore(new TaskList(), this);
+                    await Navigation.PopAsync();
 
                 }
 
