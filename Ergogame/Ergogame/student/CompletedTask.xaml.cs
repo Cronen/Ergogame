@@ -34,5 +34,10 @@ namespace Ergogame.student
             reList.Add(new StudentTask("Completed 2", DateTime.Now.AddDays(-10)));
             return reList;
         }
+
+        private async void LV_CompletedTab(object sender, ItemTappedEventArgs e)
+        {
+            await Navigation.PushModalAsync(new Notes());
+        }
     }
 }

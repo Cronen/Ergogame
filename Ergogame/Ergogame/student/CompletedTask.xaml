@@ -54,7 +54,7 @@
             </StackLayout>
             <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource bgColor}" VerticalOptions="Start" Margin="65,75,65,20">
                 <Label Text="Tasks" TextColor="#114b5f" FontSize="46" Margin="0,0,0,25"/>
-                <ListView ItemsSource="{Binding}" SeparatorColor="LightGray" RowHeight="65">
+                <ListView ItemsSource="{Binding}" ItemTapped="LV_CompletedTab" SeparatorColor="LightGray" RowHeight="65">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
