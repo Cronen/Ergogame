@@ -7,40 +7,45 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="3*"></ColumnDefinition>
+                
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
+          
             <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="#fff">
                 <StackLayout HeightRequest="75" Margin="50, 30, 20, 50">
-                    <Label Text="Dysfagi"></Label>
+                    <Label Text="Dysfagi" FontSize="42"></Label>
                 </StackLayout>
 
                 <StackLayout MinimumHeightRequest="150" Margin="50, 30, 20, 50">
-                    <Label Text="Description"></Label>
-                    <Label Text="Lorem ipisum"></Label>
+                    <Label Text="Description" FontSize="22" TextColor="{StaticResource darkgreenColor}"></Label>
+                    <Label  Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor ut felis posuere ornare quis a tellus. Orci varius natoque penatibus et magnis dis parturient Orci varius natoque penatibus et magnis dis parturientOrci varius natoque penatibus et magnis dis parturientOrci varius natoque penatibus et magnis dis parturient"></Label>
                 </StackLayout>
 
             </StackLayout>
-            <StackLayout Grid.Column="1" Grid.Row="0" Padding="100, 50, 100, 20">
+            <StackLayout  Grid.Column="1" Grid.Row="0" Padding="150, 50, 150, 20" BackgroundColor="#fdfdfd" >
                 <ScrollView>
                     <StackLayout>
-                        <FlexLayout Direction="Row" JustifyContent="SpaceBetween" AlignContent="Center">
+                        <Label Text="Clinical dialog" FontSize="42"></Label>
+                        <FlexLayout Direction="Row" JustifyContent="SpaceBetween" AlignItems="Center">
                             <StackLayout>
-                                <Label Text="Clinical dialog"></Label>
-                                <Label Text="Patient info"></Label>
-                                <Label Text="Name: John Doe"></Label>
-                                <Label Text="Age: 47"></Label>
+                                <Label TextColor="{StaticResource darkgreenColor}" Text="Patient info"></Label>
+                                <Label TextColor="{StaticResource darkgreenColor}" Text="Name: John Doe"></Label>
+                                <Label TextColor="{StaticResource darkgreenColor}" Text="Age: 47"></Label>
                             </StackLayout>
                             <Image Source="pexelsphoto25682.png" HeightRequest="145"></Image>
-
                         </FlexLayout>
-                        <StackLayout>
-                            <Label Text="Patient log"></Label>
-                            <Label Text="lorem uipums"></Label>
+                        <StackLayout Margin="0, 15">
+                            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor ut felis posuere ornare quis a tellus. Orci varius natoque penatibus et magnis dis parturient Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor ut felis posuere ornare quis a tellus. Orci varius natoque penatibus et magnis dis" ></Label>
                         </StackLayout>
+                        <StackLayout Margin="0, 50">
+                            <Label Text="Patient log" FontSize="32"></Label>
+                            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor ut felis posuere ornare quis a tellus. Orci varius natoque penatibus et magnis dis parturient Orci varius natoque penatibus et magnis dis parturientOrci varius natoque penatibus et magnis dis parturientOrci varius natoque penatibus et magnis dis parturient"></Label>
+                        </StackLayout>
+                      
                         <StackLayout WidthRequest="75">
-                            <Button ContentLayout="right,0" HeightRequest="75" WidthRequest="175"   HorizontalOptions="CenterAndExpand"  Text="Next" Image="arrowleftwhite.png"></Button>
+                            <Button BackgroundColor="{StaticResource lightgreenColor }" TextColor="{StaticResource whiteColor}" ContentLayout="right,0" HeightRequest="75" WidthRequest="175"   HorizontalOptions="End" VerticalOptions="End" Text="Next" Image="arrowleftwhite.png"></Button>
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>

@@ -7,6 +7,7 @@
         <ResourceDictionary>
 
             <Color x:Key="whiteColor">#FFFFFF</Color>
+            <Color x:Key="bgColor">#FDFDFD</Color>
             <Color x:Key="greyColor">#D2D2D2</Color>
             <Color x:Key="darkgreenColor">#114B5F</Color>
             <Color x:Key="lightgreenColor">#028090</Color>
