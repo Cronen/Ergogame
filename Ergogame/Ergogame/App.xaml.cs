@@ -12,7 +12,7 @@ namespace Ergogame
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Notes();
            // MainPage = new NavigationPage(new MainPage());
 
         }
