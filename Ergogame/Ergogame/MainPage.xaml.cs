@@ -20,17 +20,41 @@ namespace Ergogame
         private async void Login(object sender, EventArgs eventArgs)
         {
             User user = new User(UsernameEntry.Text, PasswordEntry.Text);
-            if (user.Email == "admin" && user.Password == "123")
-            {
-                await this.Navigation.PushModalAsync(new student.Task());
-            }
-            else
-            {
-                await DisplayAlert("Wrong Login", "Try again", "OK");
-                UsernameEntry.Text = "";
-                PasswordEntry.Text = "";
-            }
-            
+
+             if (user.Email == "admin" && user.Password == "123")
+                {
+                    await this.Navigation.PushModalAsync(new student.Task());
+
+                }
+
+                else
+                {
+                    if (user.Email == "teacher" && user.Password == "123")
+                    {
+                        await this.Navigation.PushModalAsync(new teacher.CreateTask());
+                    }
+
+                    else
+                    {
+                        await DisplayAlert("Wrong Login", "Try again", "OK");
+                        UsernameEntry.Text = "";
+                        PasswordEntry.Text = "";
+                    }
+                }
+
+               
+
+            //if (user.Email == "admin" && user.Password == "123")
+            //{
+            //    await this.Navigation.PushModalAsync(new student.Task());
+            //}
+            //else
+            //{
+            //    await DisplayAlert("Wrong Login", "Try again", "OK");
+            //    UsernameEntry.Text = "";
+            //    PasswordEntry.Text = "";
+            //}
+
         }
     }
 }
