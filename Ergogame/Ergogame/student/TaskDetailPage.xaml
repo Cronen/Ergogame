@@ -45,7 +45,7 @@
                         </StackLayout>
                       
                         <StackLayout WidthRequest="75">
-                            <Button BackgroundColor="{StaticResource lightgreenColor }" TextColor="{StaticResource whiteColor}" ContentLayout="right,0" HeightRequest="75" WidthRequest="175"   HorizontalOptions="End" VerticalOptions="End" Text="Next" Image="arrowleftwhite.png"></Button>
+                            <Button BackgroundColor="{StaticResource lightgreenColor }" TextColor="{StaticResource whiteColor}" ContentLayout="right,0" HeightRequest="75" WidthRequest="175"   HorizontalOptions="End" VerticalOptions="End" Text="Next" Image="arrowleftwhite.png" Clicked="ToTask"/>
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>

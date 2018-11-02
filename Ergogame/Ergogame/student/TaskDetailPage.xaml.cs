@@ -20,5 +20,10 @@ namespace Ergogame.student
         {
             await this.Navigation.PopModalAsync();
         }
+
+        private async void ToTask(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new StudentTaskView());
+        }
     }
 }
