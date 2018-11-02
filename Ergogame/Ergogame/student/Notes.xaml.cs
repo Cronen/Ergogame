@@ -16,5 +16,10 @@ namespace Ergogame.student
 		{
 			InitializeComponent ();
 		}
+
+	    private async void BackToTask(object sender, EventArgs e)
+	    {
+	        await Navigation.PopModalAsync();
+        }
 	}
 }

@@ -60,7 +60,7 @@
                     <BoxView HeightRequest="1" Color="LightGray" Margin="0,-7,0,-7"/>
 
                     <StackLayout HeightRequest="80" VerticalOptions="EndAndExpand">
-                        <Button Text="Back to tasks" HorizontalOptions="CenterAndExpand" BackgroundColor="{StaticResource lightgreenColor}" TextColor="White" CornerRadius="5"/>
+                        <Button Text="Back to tasks" HorizontalOptions="CenterAndExpand" BackgroundColor="{StaticResource lightgreenColor}" TextColor="White" CornerRadius="5" Clicked="BackToTask"/>
                     </StackLayout>
                 </StackLayout>
             </Frame>
