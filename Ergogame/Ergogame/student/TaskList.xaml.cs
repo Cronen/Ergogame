@@ -13,8 +13,10 @@ namespace Ergogame.student
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TaskList : ContentPage
     {
+        private DB_Handler DB_Class;
         public TaskList()
         {
+            DB_Class = new DB_Handler();
             NavigationPage.SetHasNavigationBar(this, false);
             BindingContext = GenerateDummyData();
             InitializeComponent();
@@ -102,13 +104,14 @@ namespace Ergogame.student
             reList.Add(new StudentTask("Closed 3", DateTime.Now.AddDays(10), false));
             return reList;
         }
-        private List<StudentTask> GenerateDummyDataCompleted()
+        private List<ITask> GenerateDummyDataCompleted()
         {
             List<StudentTask> reList = new List<StudentTask>();
-            reList.Add(new StudentTask("Completed 1", DateTime.Now.AddDays(-3)) { Completed = DateTime.Now.AddDays(-3) });
-            reList.Add(new StudentTask("Completed 2", DateTime.Now.AddDays(-5)) { Completed = DateTime.Now.AddDays(-3) });
-            reList.Add(new StudentTask("Completed 3", DateTime.Now.AddDays(-10)) { Completed = DateTime.Now.AddDays(-3) });
-            return reList;
+            
+            //reList.Add(new StudentTask("Completed 1", DateTime.Now.AddDays(-3)) { Completed = DateTime.Now.AddDays(-3) });
+            //reList.Add(new StudentTask("Completed 2", DateTime.Now.AddDays(-5)) { Completed = DateTime.Now.AddDays(-3) });
+            //reList.Add(new StudentTask("Completed 3", DateTime.Now.AddDays(-10)) { Completed = DateTime.Now.AddDays(-3) });
+            return DB_Class.GetTasks();
         }
     }
 }

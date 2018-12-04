@@ -2,6 +2,7 @@
 using Ergogame.student;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Ergogame.Model;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Ergogame
@@ -11,6 +12,7 @@ namespace Ergogame
         public App()
         {
             InitializeComponent();
+            new DB_Handler().SetupDB_DummyData();
             MainPage = new NavigationPage(new MainPage());
         }
 

@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace Ergogame.Model
 {
+    [Table("TopicTask")]
     public class TopicTask: ITask
     {
+        [PrimaryKey, AutoIncrement, Column("_id")]
+        public int Id { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public string theDate
@@ -14,6 +19,7 @@ namespace Ergogame.Model
             set { }
         }
         public string Description { get; set; }
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Material> Materials { get; set; }
         public bool Open { get; set; }
         public DateTime Completed { get; set; }
@@ -32,6 +38,8 @@ namespace Ergogame.Model
             Materials.Add(new Material("PowerPoint2"));
             Materials.Add(new Material("PowerPoint3"));
 
+        }
+        public TopicTask(){
         }
         public string getDate()
         {
