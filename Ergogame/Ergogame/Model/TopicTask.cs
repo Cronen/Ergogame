@@ -40,6 +40,7 @@ namespace Ergogame.Model
 
         }
         public TopicTask(){
+            Materials = new List<Material>();
         }
         public string getDate()
         {

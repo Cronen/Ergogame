@@ -19,11 +19,10 @@ namespace Ergogame
             db = new SQLiteConnection(GetDBPath());
         }
         
-
         public void SetupDB_DummyData()
         {
-            db.CreateTable<StudentTask>();
-            db.CreateTable<Exercise>();
+            //DropDatabase();
+            CreateTables();
             if (db.Table<StudentTask> ().Count() == 0)
             {
                 db.InsertWithChildren(new StudentTask("FromDB Exercise 1", DateTime.Now));
@@ -35,25 +34,73 @@ namespace Ergogame
                 db.InsertWithChildren(new StudentTask("FromDB Completed 2", DateTime.Now.AddDays(-5)) { Completed = DateTime.Now.AddDays(-3) });
                 db.InsertWithChildren(new StudentTask("FromDB Completed 3", DateTime.Now.AddDays(-10)) { Completed = DateTime.Now.AddDays(-3) });
             }
-            //db.CreateTable<TopicTask>();
-            //if (db.Table<TopicTask>().Count() == 0)
-            //{
-            //    db.Insert(new TopicTask("Topic 1", DateTime.Now));
-            //    db.Insert(new TopicTask("Topic 2", DateTime.Now));
-            //    db.Insert(new TopicTask("TopicClosed 2", DateTime.Now, false));
-            //    db.Insert(new TopicTask("TopicClosed 1", DateTime.Now, false));
-            //    db.Insert(new TopicTask("TopicCompleted 1", DateTime.Now.AddDays(-3)) { Completed = DateTime.Now.AddDays(-3) });
-            //    db.Insert(new TopicTask("TopicCompleted 1", DateTime.Now.AddDays(-6)) { Completed = DateTime.Now.AddDays(-3) });
-            //}
 
+            if (db.Table<TopicTask>().Count() == 0)
+            {
+                db.InsertWithChildren(new TopicTask("DB_Topic 1", DateTime.Now));
+                db.InsertWithChildren(new TopicTask("DB_Topic 2", DateTime.Now));
+                db.InsertWithChildren(new TopicTask("DB_TopicClosed 2", DateTime.Now, false));
+                db.InsertWithChildren(new TopicTask("DB_TopicClosed 1", DateTime.Now, false));
+                db.InsertWithChildren(new TopicTask("DB_TopicCompleted 1", DateTime.Now.AddDays(-3)) { Completed = DateTime.Now.AddDays(-3) });
+                db.InsertWithChildren(new TopicTask("DB_TopicCompleted 1", DateTime.Now.AddDays(-6)) { Completed = DateTime.Now.AddDays(-3) });
+            }
+
+        }
+        private void CreateTables()
+        {
+            db.CreateTable<StudentTask>();
+            db.CreateTable<Exercise>();
+            db.CreateTable<TopicTask>();
+            db.CreateTable<Material>();
         }
         public List<ITask> GetTasks()
         {
             List<ITask> reList = new List<ITask>();
             var result = db.GetAllWithChildren<StudentTask>();
+            var result2 = db.GetAllWithChildren<TopicTask>();
             foreach (var st in result)
             {
                 reList.Add(st);
+            }
+            foreach (var t in result2)
+            {
+                reList.Add(t);
+            }
+            return reList;
+        }
+        public List<ITask> GetOpenTasks()
+        {
+            List<ITask> reList = new List<ITask>();
+            foreach (ITask task in GetTasks())
+            {
+                if (task.Open && task.Completed == DateTime.MinValue)
+                {
+                    reList.Add(task);
+                }
+            }
+            return reList;
+        }
+        public List<ITask> GetClosedTasks()
+        {
+            List<ITask> reList = new List<ITask>();
+            foreach (ITask task in GetTasks())
+            {
+                if (!task.Open)
+                {
+                    reList.Add(task);
+                }
+            }
+            return reList;
+        }
+        public List<ITask> GetCompletedTasks()
+        {
+            List<ITask> reList = new List<ITask>();
+            foreach (ITask task in GetTasks())
+            {
+                if (task.Completed != DateTime.MinValue)
+                {
+                    reList.Add(task);
+                }
             }
             return reList;
         }
@@ -76,6 +123,15 @@ namespace Ergogame
                     throw new Exception("Device not recognized");
             }
             return Path.Combine(path, sqliteFilename);
+        }
+
+        //Only use this to clear database in case of errors
+        private void DropDatabase()
+        {            
+            db.DropTable<StudentTask>();
+            db.DropTable<Exercise>();
+            db.DropTable<TopicTask>();
+            db.DropTable<Material>();
         }
     }
 }

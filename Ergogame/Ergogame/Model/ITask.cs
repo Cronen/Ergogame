@@ -6,6 +6,7 @@ namespace Ergogame.Model
 {
     interface ITask
     {
+        int Id { get; set; }
         string Name { get; set; }
         DateTime Date { get; set; }
         string theDate { get; set; }

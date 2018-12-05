@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace Ergogame.Model
 {
@@ -10,11 +11,16 @@ namespace Ergogame.Model
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
+        [ForeignKey(typeof(ITask))]
+        public int TaskId { get; set; }
         public string MatName { get; set; }
         public string URL { get; set; }
         public Material(string name)
         {
             MatName = name;
+        }
+        public Material()
+        {
         }
     }
 }

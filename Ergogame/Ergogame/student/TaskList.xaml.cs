@@ -18,13 +18,13 @@ namespace Ergogame.student
         {
             DB_Class = new DB_Handler();
             NavigationPage.SetHasNavigationBar(this, false);
-            BindingContext = GenerateDummyData();
+            BindingContext = DB_Class.GetOpenTasks();
             InitializeComponent();
             Resources["ImageSource"] = Resources["Arrow"];
         }
         private void OnOpenTap(object sender, EventArgs e)
         {
-            BindingContext = GenerateDummyData();
+            BindingContext = DB_Class.GetOpenTasks();
             Resources["ImageSource"] = Resources["Arrow"];
             ResetMenuBG();
             Img_open.Source = "list.png";
@@ -33,7 +33,7 @@ namespace Ergogame.student
         }
         private void OnClosedTap(object sender, EventArgs e)
         {
-            BindingContext = GenerateDummyDataClosed();
+            BindingContext = DB_Class.GetClosedTasks();
             Resources["ImageSource"] = Resources["NoArrow"];
             ResetMenuBG();
             SL_Closed.BackgroundColor = (Color)this.Resources["lightbgColor"];
@@ -41,7 +41,7 @@ namespace Ergogame.student
         }
         private void OnCompletedTap(object sender, EventArgs e)
         {
-            BindingContext = GenerateDummyDataCompleted();
+            BindingContext = DB_Class.GetCompletedTasks();
             Resources["ImageSource"] = Resources["Arrow"];
             ResetMenuBG();
             SL_Completed.BackgroundColor = (Color)this.Resources["lightbgColor"];
@@ -86,32 +86,6 @@ namespace Ergogame.student
             LB_Completed.TextColor = (Color)this.Resources["DarkMain"];
 
             Img_open.Source = "listdark.png";
-        }
-        private List<ITask> GenerateDummyData()
-        {
-            List<ITask> reList = new List<ITask>();
-            reList.Add(new StudentTask("Exercise 1", DateTime.Now));
-            reList.Add(new TopicTask("Topic 1", DateTime.Now));
-            reList.Add(new StudentTask("Dysfagi", DateTime.Now));
-            reList.Add(new TopicTask("Topic 2", DateTime.Now));
-            return reList;
-        }
-        private List<StudentTask> GenerateDummyDataClosed()
-        {
-            List<StudentTask> reList = new List<StudentTask>();
-            reList.Add(new StudentTask("Closed 1", DateTime.Now.AddDays(3), false));
-            reList.Add(new StudentTask("Closed 2", DateTime.Now.AddDays(5), false));
-            reList.Add(new StudentTask("Closed 3", DateTime.Now.AddDays(10), false));
-            return reList;
-        }
-        private List<ITask> GenerateDummyDataCompleted()
-        {
-            List<StudentTask> reList = new List<StudentTask>();
-            
-            //reList.Add(new StudentTask("Completed 1", DateTime.Now.AddDays(-3)) { Completed = DateTime.Now.AddDays(-3) });
-            //reList.Add(new StudentTask("Completed 2", DateTime.Now.AddDays(-5)) { Completed = DateTime.Now.AddDays(-3) });
-            //reList.Add(new StudentTask("Completed 3", DateTime.Now.AddDays(-10)) { Completed = DateTime.Now.AddDays(-3) });
-            return DB_Class.GetTasks();
         }
     }
 }

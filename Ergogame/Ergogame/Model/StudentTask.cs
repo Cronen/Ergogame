@@ -7,14 +7,15 @@ using SQLiteNetExtensions.Attributes;
 namespace Ergogame.Model
 {
     [Table("StudentTask")]
-    public class StudentTask: ITask
+    public class StudentTask : ITask
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
-        public string theDate {
-            get { return Date.ToString("dd.MM.yyyy");}
+        public string theDate
+        {
+            get { return Date.ToString("dd.MM.yyyy"); }
             set { }
         }
         public string Description { get; set; }
@@ -23,7 +24,7 @@ namespace Ergogame.Model
         public bool Open { get; set; }
         public DateTime Completed { get; set; }
 
-        public StudentTask(string name, DateTime date): this(name, date, true)
+        public StudentTask(string name, DateTime date) : this(name, date, true)
         {
         }
         public StudentTask(string name, DateTime date, bool open)
@@ -37,7 +38,8 @@ namespace Ergogame.Model
             Exercises.Add(new Exercise("Exercise 2"));
             Exercises.Add(new Exercise("Exercise 3"));
         }
-        public StudentTask() {
+        public StudentTask()
+        {
             Exercises = new List<Exercise>();
         }
         public string getDate()
