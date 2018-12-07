@@ -18,6 +18,7 @@ namespace Ergogame.Model
         public Material(string name)
         {
             MatName = name;
+            URL = @"https://en.wikipedia.org/wiki/Xamarin";
         }
         public Material()
         {

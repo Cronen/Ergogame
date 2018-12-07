@@ -42,5 +42,11 @@ namespace Ergogame.student
         {
             await Navigation.PopModalAsync();
         }
+
+        private void MaterialTap(object sender, ItemTappedEventArgs e)
+        {
+            Material mat = (Material)e.Item;
+            Device.OpenUri(new System.Uri(mat.URL));
+        }
     }
 }
