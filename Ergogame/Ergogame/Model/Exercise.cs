@@ -14,7 +14,7 @@ namespace Ergogame.Model
         [ForeignKey(typeof(StudentTask))]
         public int TaskId { get; set; }
         public string Name { get; set; }
-
+        public string Solution { get; set; }
         public Exercise()
         {
         }

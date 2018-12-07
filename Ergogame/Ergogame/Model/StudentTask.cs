@@ -21,6 +21,8 @@ namespace Ergogame.Model
         public string Description { get; set; }
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Exercise> Exercises { get; set; }
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<Material> Materials { get; set; }
         public bool Open { get; set; }
         public DateTime Completed { get; set; }
 
@@ -37,9 +39,15 @@ namespace Ergogame.Model
             Exercises.Add(new Exercise("Exercise 1"));
             Exercises.Add(new Exercise("Exercise 2"));
             Exercises.Add(new Exercise("Exercise 3"));
+
+            Materials = new List<Material>();
+            Materials.Add(new Material("PowerPoint"));
+            Materials.Add(new Material("Video"));
+            Materials.Add(new Material("Wiki page"));
         }
         public StudentTask()
         {
+            Materials = new List<Material>();
             Exercises = new List<Exercise>();
         }
         public string getDate()

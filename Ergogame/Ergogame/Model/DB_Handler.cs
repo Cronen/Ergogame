@@ -4,8 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Ergogame.Model;
+using Ergogame.Model.UserModels;
 using SQLite;
-using SQLiteNetExtensions;
 using SQLiteNetExtensions.Extensions;
 using Xamarin.Forms;
 
@@ -18,12 +18,12 @@ namespace Ergogame
         {
             db = new SQLiteConnection(GetDBPath());
         }
-        
+
         public void SetupDB_DummyData()
         {
-            //DropDatabase();
+            DropDatabase();
             CreateTables();
-            if (db.Table<StudentTask> ().Count() == 0)
+            if (db.Table<StudentTask>().Count() == 0)
             {
                 db.InsertWithChildren(new StudentTask("FromDB Exercise 1", DateTime.Now));
                 db.InsertWithChildren(new StudentTask("FromDB Dysfagi", DateTime.Now));
@@ -44,7 +44,11 @@ namespace Ergogame
                 db.InsertWithChildren(new TopicTask("DB_TopicCompleted 1", DateTime.Now.AddDays(-3)) { Completed = DateTime.Now.AddDays(-3) });
                 db.InsertWithChildren(new TopicTask("DB_TopicCompleted 1", DateTime.Now.AddDays(-6)) { Completed = DateTime.Now.AddDays(-3) });
             }
-
+            if (db.Table<Users>().Count() == 0)
+            {
+                db.InsertWithChildren(new Users("admin"));
+                db.InsertWithChildren(new Users("Student"));
+            }
         }
         private void CreateTables()
         {
@@ -52,6 +56,9 @@ namespace Ergogame
             db.CreateTable<Exercise>();
             db.CreateTable<TopicTask>();
             db.CreateTable<Material>();
+            db.CreateTable<Users>();
+            db.CreateTable<Note>();
+            db.CreateTable<Feedback>();
         }
         public List<ITask> GetTasks()
         {
@@ -127,11 +134,14 @@ namespace Ergogame
 
         //Only use this to clear database in case of errors
         private void DropDatabase()
-        {            
+        {
             db.DropTable<StudentTask>();
             db.DropTable<Exercise>();
             db.DropTable<TopicTask>();
             db.DropTable<Material>();
+            db.DropTable<Users>();
+            db.DropTable<Note>();
+            db.DropTable<Feedback>();
         }
     }
 }
