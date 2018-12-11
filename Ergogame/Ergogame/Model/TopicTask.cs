@@ -38,7 +38,7 @@ namespace Ergogame.Model
             Exercises = new List<Exercise>();
             Exercises.Add(new Exercise("Exercise 1"));
             Exercises.Add(new Exercise("Exercise 2"));
-            Exercises.Add(new Exercise("Exercise 3"));
+            Exercises.Add(new Exercise("Group exercise"));
 
             Materials = new List<Material>();
             Materials.Add(new Material("PowerPoint"));

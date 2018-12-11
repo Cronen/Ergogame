@@ -16,28 +16,12 @@ namespace Ergogame.student
         TopicTask Task;
         public TopicDetails(TopicTask tt)
         {
-            Task = tt; ;
+            Task = tt;
             InitializeComponent();
             LV_Materials.ItemsSource = Task.Materials;
             LB_TopicName.Text = Task.Name;
             LB_Desc.Text = Task.Description;
         }
-        public TopicDetails()
-        {
-            //This is only for development, remove for final product
-            Task = GenerateDummyData();
-            BindingContext = Task.Materials;
-            InitializeComponent();
-            LB_TopicName.Text = Task.Name;
-            LB_Desc.Text = Task.Description;
-
-        }
-        private TopicTask GenerateDummyData()
-        {
-
-            return new TopicTask("Topic 1", DateTime.Now.AddDays(1));
-        }
-
         private async void OnBack(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
@@ -47,6 +31,11 @@ namespace Ergogame.student
         {
             Material mat = (Material)e.Item;
             Device.OpenUri(new System.Uri(mat.URL));
+        }
+
+        private async void NextBtnClick(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new ExerciseListView(Task));
         }
     }
 }
