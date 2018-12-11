@@ -17,7 +17,7 @@
             <Color x:Key="redColor">#F45B69</Color>
             
 
-            //GENERAL BUTTON STYLE
+            <!--GENERAL BUTTON STYLE-->
             <Style x:Key="GeneralButtonStyle" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
@@ -26,19 +26,19 @@
                 <Setter Property="FontSize" Value="22" />
             </Style>
 
-            //BUTTON STYLES FOR FORWARD
+            <!--//BUTTON STYLES FOR FORWARD-->
             <Style x:Key="ForwardButtonStyle" TargetType="Button" BasedOn="{StaticResource GeneralButtonStyle}">
                 <Setter Property="TextColor" Value="{StaticResource whiteColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource lightgreenColor}" />
             </Style>
 
-            //BUTTON STYLES FOR SUBMIT
+            <!--//BUTTON STYLES FOR SUBMIT-->
             <Style x:Key="SubmitButtonStyle" TargetType="Button" BasedOn="{StaticResource GeneralButtonStyle}">
                 <Setter Property="TextColor" Value="{StaticResource whiteColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource greyColor}" />
             </Style>
 
-            //GENERAL TAB STYLE
+            <!--//GENERAL TAB STYLE-->
             <Style x:Key="GeneralTabStyle" TargetType="Button">
                 <Setter Property="HeightRequest" Value="200" />
                 <Setter Property="FontSize" Value="30" />
@@ -46,16 +46,27 @@
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
-            //TAB STYLE FOR TASK PAGE INHERIT FROM THE GENERAL TAB STYLE
+            <!--//TAB STYLE FOR TASK PAGE INHERIT FROM THE GENERAL TAB STYLE-->
             <Style x:Key="TaskTabStyle" TargetType="Button" BasedOn="{StaticResource GeneralTabStyle}">
                 <Setter Property="HeightRequest" Value="200" />
             </Style>
             
-            //TAB STYLE FOR NOTES PAGE INHERIT FROM THE GENERAL TAB STYLE
+            <!--//TAB STYLE FOR NOTES PAGE INHERIT FROM THE GENERAL TAB STYLE-->
             <Style x:Key="NotesTabStyle" TargetType="Button" BasedOn="{StaticResource GeneralTabStyle}">
                 <Setter Property="HeightRequest" Value="50" />
             </Style>
 
+            <!--//LABEL HEADLINE-->
+            <Style x:Key="Headline" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource blueColor}" />
+                <Setter Property="FontSize" Value="26" />
+            </Style>
+
+            <!--//LABEL NORMAL TEXT-->
+            <Style x:Key="NormTxt" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource blueColor}" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
 
         </ResourceDictionary>
 

@@ -46,7 +46,7 @@
                 <Button BackgroundColor="{StaticResource lightgreenColor }" TextColor="{StaticResource whiteColor}" FontSize="22" HeightRequest="50" WidthRequest="175"   HorizontalOptions="Center" VerticalOptions="End" Text="Back" Margin="0,0,0,50" Clicked="OnBack"/>
 
             </StackLayout>
-            <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource bgColor}" Margin="85,75,85,0">
+            <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource bgColor}" Padding="85,75,85,0">
                 <Label Text="Description" Style="{StaticResource Headline}"/>
                 <Label x:Name="LB_Desc" Style="{StaticResource Description}"/>
                 <Button BackgroundColor="{StaticResource lightgreenColor }" TextColor="{StaticResource whiteColor}" Clicked="NextBtnClick" FontSize="22" ContentLayout="right,0" HeightRequest="50" WidthRequest="175"   HorizontalOptions="End" VerticalOptions="End" Text="Next" Image="arrowleftwhite.png" Margin="0,25,0,0"/>

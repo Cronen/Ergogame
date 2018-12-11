@@ -15,6 +15,7 @@ namespace Ergogame.student
     {
         TopicTask Task;
         List<ExerciseViewModel> ExerciseList;
+        ExerciseView CurrentView;
         public ExerciseListView(TopicTask tt)
         {
             Task = tt;
@@ -29,11 +30,13 @@ namespace Ergogame.student
                 {
                     ExerciseList.Add(new ExerciseViewModel(e));
                 }
-
             }
 
             InitializeComponent();
             LV_Exercise.ItemsSource = ExerciseList;
+            CurrentView = new ExerciseView(ExerciseList[0]);
+            Content_SL_Exercise.Children.Add(CurrentView);
+
         }
         private void ExerciseTapped(object sender, ItemTappedEventArgs e)
         {
@@ -42,7 +45,8 @@ namespace Ergogame.student
             {
                 if (exercise == exer)
                 {
-                    exercise.IsFocused = true;
+                    //exercise.IsFocused = true;
+                    exer.IsFocused = true;
                 }
                 else
                 {
@@ -52,6 +56,10 @@ namespace Ergogame.student
             //2 lines to refresh listview
             LV_Exercise.ItemsSource = null;
             LV_Exercise.ItemsSource = ExerciseList;
+            //3 lines tpo update content view
+            Content_SL_Exercise.Children.Remove(CurrentView);
+            CurrentView = new ExerciseView(exer);
+            Content_SL_Exercise.Children.Add(CurrentView);
         }
     }
 }
