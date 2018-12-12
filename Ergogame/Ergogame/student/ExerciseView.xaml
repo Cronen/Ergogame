@@ -2,11 +2,11 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ergogame.student.ExerciseView">
-  <ContentView.Content>
-      <StackLayout>
-          <Label x:Name="Exercise_Headline" Text="" Style="{StaticResource Headline}" HorizontalOptions="StartAndExpand"/>
-          <Label x:Name="Exercise_Description" Text="oi" Style="{StaticResource NormTxt}" HorizontalOptions="StartAndExpand"/>
-          
-      </StackLayout>
-  </ContentView.Content>
+    <ContentView.Content>
+        <StackLayout>
+            <Label x:Name="Exercise_Headline" Text="" Style="{StaticResource Headline}" HorizontalOptions="StartAndExpand"/>
+            <Label x:Name="Exercise_Description" Text="oi" Style="{StaticResource NormTxt}" HorizontalOptions="StartAndExpand"/>
+            <Image x:Name="YoutubeField" Source="YoutubeVidThumb" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentView.Content>
 </ContentView>
