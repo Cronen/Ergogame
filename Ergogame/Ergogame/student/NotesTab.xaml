@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Ergogame.student.NotesContainer"
+             x:Class="Ergogame.student.NotesTab">
+  <!--Pages can be added as references or inline-->
+    <TabbedPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="MenuItem" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource darkgreenColor}" />
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+            </Style>
+        </ResourceDictionary>
+    </TabbedPage.Resources>
+
+
+    <ContentPage Title="TaskDescription">
+      <StackLayout>
+          <BoxView HeightRequest="1" Color="LightGray" Margin="0,0,0,-7"/>
+          <StackLayout HeightRequest="80" VerticalOptions="Fill" Padding="20,0,0,0">
+              <Label Text="Task description" Style="{StaticResource MenuItem}"/>
+              <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TaskDescription"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+      </StackLayout>
+  </ContentPage>
+
+
+    <ContentPage Title="MyNotes" >
+      <StackLayout>
+          <BoxView HeightRequest="1" Color="LightGray" Margin="0,-7,0,-7" />
+          <StackLayout HeightRequest="80"  Padding="20,0,0,0" BackgroundColor="{StaticResource lightgreenColor}">
+              <Label Text="My notes" Style="{StaticResource MenuItem}" TextColor="White"/>
+              <StackLayout.GestureRecognizers>
+                  <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="MyNotes"/> 
+              </StackLayout.GestureRecognizers>
+          </StackLayout>
+        </StackLayout>
+     
+  </ContentPage>
+
+    <ContentPage Title="Feedback" >
+        <StackLayout>
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,-7,0,-7"/>
+            <StackLayout HeightRequest="80" Padding="20,0,0,0" >
+                <Label Text="Feedback" Style="{StaticResource MenuItem}"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Feedback"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="solution" >
+        <StackLayout>
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,-7,0,-7"/>
+            <StackLayout HeightRequest="80" Padding="20,0,0,0" >
+                <Label Text="Solution" Style="{StaticResource MenuItem}"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Solution"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+
+</TabbedPage>

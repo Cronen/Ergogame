@@ -13,8 +13,8 @@ namespace Ergogame
         {
             InitializeComponent();
             new DB_Handler().SetupDB_DummyData();
-            MainPage = new NavigationPage(new MainPage());
-            //MainPage = new NavigationPage(new TaskList());
+            //MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new NotesTab());
         }
 
         protected override void OnStart()
