@@ -26,7 +26,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand" Padding="0,15,0,0">
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="0,15,0,0">
                                     <Label Text="{Binding Name}" Style="{StaticResource ListviewExercise}">
                                         <Label.Triggers>
                                             <DataTrigger TargetType="Label" Binding="{Binding IsFocused}" Value="True">
@@ -51,6 +51,8 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                <Button BackgroundColor="{StaticResource lightgreenColor }" TextColor="{StaticResource whiteColor}" ContentLayout="right,0" HeightRequest="75" WidthRequest="175"   HorizontalOptions="Center" VerticalOptions="End" Text="Submit" Image="arrowleftwhite.png" Clicked="Submit"/>
+
             </StackLayout>
             <StackLayout x:Name="Content_SL_Exercise" Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource bgColor}" Padding="15,75,15,0" >
 

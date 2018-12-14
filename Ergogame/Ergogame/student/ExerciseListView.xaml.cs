@@ -61,5 +61,10 @@ namespace Ergogame.student
             CurrentView = new ExerciseView(exer);
             Content_SL_Exercise.Children.Add(CurrentView);
         }
+
+        private async void Submit(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new Notes());
+        }
     }
 }
