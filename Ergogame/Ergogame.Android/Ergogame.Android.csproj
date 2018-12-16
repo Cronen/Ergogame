@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
@@ -98,7 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ergogame\Ergogame.csproj">
-      <Project>{C9ED138D-46C2-4760-9CC6-60E65931A60D}</Project>
+      <Project>{6D588B39-EB3A-4DF9-8B2F-36F3DC84B4A7}</Project>
       <Name>Ergogame</Name>
     </ProjectReference>
   </ItemGroup>
