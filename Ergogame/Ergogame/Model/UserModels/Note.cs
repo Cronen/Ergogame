@@ -7,7 +7,7 @@ using SQLiteNetExtensions.Attributes;
 namespace Ergogame.Model.UserModels
 {
     [Table("Notes")]
-    class Note
+    public class Note
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
@@ -15,7 +15,17 @@ namespace Ergogame.Model.UserModels
         public int UserID { get; set; }
         [ForeignKey(typeof(Exercise))]
         public int ExerciseID { get; set; }
-        public string notes { get; set; }
+        public string Notes { get; set; }
         public DateTime CreateDate { get; set; }
+        public Note()
+        {
+        }
+        public Note(string notes, int user, int exercise)
+        {
+            CreateDate = DateTime.Now;
+            UserID = user;
+            ExerciseID = exercise;
+            Notes = notes;
+        }
     }
 }
