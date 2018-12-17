@@ -32,16 +32,16 @@
     <EmbeddedResource Update="student\ExerciseView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="student\NotesContainer\Feedback.xaml">
+    <EmbeddedResource Update="student\NotesContainer\Feedback_view.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="student\NotesContainer\MyNotes.xaml">
+    <EmbeddedResource Update="student\NotesContainer\MyNotes_view.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="student\NotesContainer\TaskDescription.xaml">
+    <EmbeddedResource Update="student\NotesContainer\Solution_view.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="student\NotesContainer\Solution.xaml">
+    <EmbeddedResource Update="student\NotesContainer\TaskDescription_view.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="student\NotesTab.xaml">

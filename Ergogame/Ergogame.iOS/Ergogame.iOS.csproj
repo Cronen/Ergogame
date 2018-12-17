@@ -250,15 +250,33 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\arrowrightblue.imageset\arrowrightblue1.pdf" />
-    <ImageAsset Include="Assets.xcassets\arrowrightwhite.imageset\arrowrightwhite1.pdf" />
-    <ImageAsset Include="Assets.xcassets\checksquare.imageset\checksquare1.pdf" />
-    <ImageAsset Include="Assets.xcassets\list.imageset\list1.pdf" />
-    <ImageAsset Include="Assets.xcassets\lock.imageset\lock1.pdf" />
-    <ImageAsset Include="Assets.xcassets\plusesquare.imageset\plussquare1.pdf" />
-    <ImageAsset Include="Assets.xcassets\writeicon.imageset\writeicon1.pdf" />
-    <ImageAsset Include="Assets.xcassets\backgroundimagepattern.imageset\backgroundimagepattern.jpg" />
-    <ImageAsset Include="Assets.xcassets\backgroundimagepattern.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\arrowrightblue.imageset\arrowrightblue1.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\arrowrightwhite.imageset\arrowrightwhite1.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\checksquare.imageset\checksquare1.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\list.imageset\list1.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\lock.imageset\lock1.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\plusesquare.imageset\plussquare1.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\writeicon.imageset\writeicon1.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\backgroundimagepattern.imageset\backgroundimagepattern.jpg">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\backgroundimagepattern.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

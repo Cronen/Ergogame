@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Ergogame.student.NotesContainer
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MyNotes : ContentPage
+	public partial class Feedback_view : ContentView
 	{
-		public MyNotes ()
+		public Feedback_view ()
 		{
 			InitializeComponent ();
 		}

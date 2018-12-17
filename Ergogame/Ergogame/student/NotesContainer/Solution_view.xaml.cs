@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Ergogame.student
+namespace Ergogame.student.NotesContainer
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Solution : ContentPage
+	public partial class Solution_view : ContentView
 	{
-		public Solution ()
+		public Solution_view ()
 		{
 			InitializeComponent ();
 		}
