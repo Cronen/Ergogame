@@ -13,7 +13,7 @@ namespace Ergogame.student
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NotesTab : ContentPage
     {
-        NotesTab ContentView;
+      
 
         public NotesTab ()
         {
@@ -21,24 +21,28 @@ namespace Ergogame.student
             InitializeComponent();
         }
 
-        private async void TaskDescription(object sender, EventArgs e)
+        private  void TaskDescription(object sender, EventArgs e)
         {
-          tabcontentview.Children.Add(new TaskDescription_view());
+            tabcontentview.Children.Clear();
+            tabcontentview.Children.Add(new TaskDescription_view());
 
         }
 
-        private async void MyNotes(object sender, EventArgs e)
+        private  void MyNotes(object sender, EventArgs e)
         {
+            tabcontentview.Children.Clear();
             tabcontentview.Children.Add(new MyNotes_view());
         }
 
-        private async void Feedback(object sender, EventArgs e)
+        private void Feedback(object sender, EventArgs e)
         {
+            tabcontentview.Children.Clear();
             tabcontentview.Children.Add(new Feedback_view());
         }
 
-        private async void Solution(object sender, EventArgs e)
+        private  void Solution(object sender, EventArgs e)
         {
+            tabcontentview.Children.Clear();
             tabcontentview.Children.Add(new Solution_view());
         }
     }
