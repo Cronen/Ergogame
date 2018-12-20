@@ -21,7 +21,8 @@ namespace Ergogame
 
         public void SetupDB_DummyData()
         {
-            DropDatabase();
+            //Only dropping database for test, to update DB with changes
+            //DropDatabase();
             CreateTables();
             if (db.Table<StudentTask>().Count() == 0)
             {
@@ -48,6 +49,13 @@ namespace Ergogame
             {
                 db.InsertWithChildren(new Users("admin"));
                 db.InsertWithChildren(new Users("Student"));
+            }
+            if (db.Table<Note>().Count() == 0)
+            {
+                //db.InsertWithChildren(new Note("Notes for exercise 1", 2,1));
+                //db.InsertWithChildren(new Note("Notes for exercise 2", 2,2));
+                //db.InsertWithChildren(new Note("This is a note", 2,3));
+                //db.InsertWithChildren(new Note("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et arcu a urna fringilla dignissim. Praesent porta libero ac enim accumsan, a eleifend nunc faucibus.", 2,4));
             }
         }
         private void CreateTables()
@@ -110,6 +118,28 @@ namespace Ergogame
                 }
             }
             return reList;
+        }
+        public Note GetNoteFromExcerise(Exercise e)
+        {
+            Note result;
+            try
+            {
+                result = db.Get<Note>(e.Id);
+            }
+            catch (Exception)
+            {
+                result = new Note();
+            }
+            return result;
+        }
+        public void InsertOrUpdateNote(string text, int noteID, int exID)
+        {
+            Note toSave = new Note(text,2,exID);
+            if (noteID != 0)
+            {
+                toSave.Id = noteID;
+            }
+            db.InsertOrReplaceWithChildren(toSave);
         }
         public string GetDBPath()
         {

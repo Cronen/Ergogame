@@ -17,5 +17,15 @@ namespace Ergogame.Model.UserModels
         public int NoteID { get; set; }
         public string FeedbackText { get; set; }
         public DateTime CreateDate { get; set; }
+        public Feedback()
+        {
+        }
+        public Feedback(string text, int user, int note)
+        {
+            CreateDate = DateTime.Now;
+            UserID = user;
+            NoteID = note;
+            FeedbackText = text;
+        }
     }
 }

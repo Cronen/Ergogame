@@ -16,24 +16,22 @@ namespace Ergogame.student
         TopicTask Task;
         List<ExerciseViewModel> ExerciseList;
         ExerciseView CurrentView;
+        ExerciseViewModel SelectedExercise;
+        private DB_Handler DB_Class;
         public ExerciseListView(TopicTask tt)
         {
             Task = tt;
+            DB_Class = new DB_Handler();
             ExerciseList = new List<ExerciseViewModel>();
             foreach (Exercise e in Task.Exercises)
             {
-                if (ExerciseList.Count == 0)
-                {
-                    ExerciseList.Add(new ExerciseViewModel(e) { Completed = true, IsFocused = true });
-                }
-                else
-                {
-                    ExerciseList.Add(new ExerciseViewModel(e));
-                }
+                ExerciseList.Add(new ExerciseViewModel(e));
             }
 
             InitializeComponent();
             LV_Exercise.ItemsSource = ExerciseList;
+            SelectedExercise = ExerciseList[0];
+            Notes_input.Text = SelectedExercise.Notes;
             CurrentView = new ExerciseView(ExerciseList[0]);
             Content_SL_Exercise.Children.Add(CurrentView);
 
@@ -47,15 +45,15 @@ namespace Ergogame.student
                 {
                     //exercise.IsFocused = true;
                     exer.IsFocused = true;
+                    SelectedExercise = exercise;
+                    Notes_input.Text = exercise.Notes;
                 }
                 else
                 {
                     exercise.IsFocused = false;
                 }
             }
-            //2 lines to refresh listview
-            LV_Exercise.ItemsSource = null;
-            LV_Exercise.ItemsSource = ExerciseList;
+            RefreshListView();
             //3 lines tpo update content view
             Content_SL_Exercise.Children.Remove(CurrentView);
             CurrentView = new ExerciseView(exer);
@@ -64,7 +62,41 @@ namespace Ergogame.student
 
         private async void Submit(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new Notes());
+            bool AllCompleted = true;
+            foreach (var eVM in ExerciseList)
+            {
+                if (!eVM.Completed)
+                {
+                    AllCompleted = false;
+                    break;
+                }
+            }
+            if (AllCompleted)
+            {
+                await Navigation.PushModalAsync(new Notes());
+            }
+            else
+            {
+                var answer = await DisplayAlert("Warning", "Not all exercises are completed. Continue anyway?", "Yes", "No");
+                if (answer)
+                {
+                    await Navigation.PushModalAsync(new Notes());
+                }
+            }
+        }
+
+        private void Complete_Exercise(object sender, EventArgs e)
+        {
+            SelectedExercise.Notes = Notes_input.Text;
+            SelectedExercise.Completed = true;
+            DB_Class.InsertOrUpdateNote(SelectedExercise.Notes, SelectedExercise.Note_ID, SelectedExercise.ID);
+            RefreshListView();
+        }
+        private void RefreshListView()
+        {
+            //2 lines to refresh listview
+            LV_Exercise.ItemsSource = null;
+            LV_Exercise.ItemsSource = ExerciseList;
         }
     }
 }

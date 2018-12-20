@@ -19,7 +19,7 @@ namespace Ergogame.student
 
 	    private async void BackToTask(object sender, EventArgs e)
 	    {
-	        await Navigation.PopModalAsync();
+	        await Navigation.PushModalAsync(new TaskList());
         }
 	}
 }
