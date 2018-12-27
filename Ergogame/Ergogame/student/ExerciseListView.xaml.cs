@@ -15,7 +15,6 @@ namespace Ergogame.student
     {
         TopicTask Task;
         List<ExerciseViewModel> ExerciseList;
-        ExerciseView CurrentView;
         ExerciseViewModel SelectedExercise;
         private DB_Handler DB_Class;
         public ExerciseListView(TopicTask tt)
@@ -32,8 +31,7 @@ namespace Ergogame.student
             LV_Exercise.ItemsSource = ExerciseList;
             SelectedExercise = ExerciseList[0];
             Notes_input.Text = SelectedExercise.Notes;
-            CurrentView = new ExerciseView(ExerciseList[0]);
-            Content_SL_Exercise.Children.Add(CurrentView);
+            Content_SL_Exercise.Children.Add(new ExerciseView(ExerciseList[0]));
 
         }
         private void ExerciseTapped(object sender, ItemTappedEventArgs e)
@@ -55,9 +53,8 @@ namespace Ergogame.student
             }
             RefreshListView();
             //3 lines tpo update content view
-            Content_SL_Exercise.Children.Remove(CurrentView);
-            CurrentView = new ExerciseView(exer);
-            Content_SL_Exercise.Children.Add(CurrentView);
+            Content_SL_Exercise.Children.Clear();
+            Content_SL_Exercise.Children.Add(new ExerciseView(exer));
         }
 
         private async void Submit(object sender, EventArgs e)
