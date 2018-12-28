@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Ergogame.student.NotesContainer.MyNotes_view" BackgroundColor="Crimson">
-  <ContentView.Content>
-      <StackLayout>
-          <Label Text="MyNotes"
-                 VerticalOptions="CenterAndExpand" 
-                 HorizontalOptions="CenterAndExpand" />
-      </StackLayout>
+             x:Class="Ergogame.student.NotesContainer.MyNotes_view">
+    <ContentView.Content>
+        <StackLayout>
+            <StackLayout x:Name="SL_list" Orientation="Horizontal" Spacing="0">
+            </StackLayout>
+            <StackLayout x:Name="SL_content" Padding="10" >
+                <BoxView Color="{StaticResource lightgreenColor}" HeightRequest="1" HorizontalOptions="StartAndExpand" WidthRequest="400"/>
+                <Editor x:Name="ED_NotesField" Text="MyNotes" VerticalOptions="Start" HorizontalOptions="Start" Style="{StaticResource NormTxt}" WidthRequest="400" HeightRequest="200" Completed="ED_EditNote"/>
+                <Label Text="Feedback" Style="{StaticResource Headline}" Margin="0,25,0,0" FontAttributes="Bold"/>
+                <Label x:Name="LB_Feedback" Text="Feedback here" VerticalOptions="Start" HorizontalOptions="Start" Style="{StaticResource NormTxt}"/>
+            </StackLayout>
+        </StackLayout>
     </ContentView.Content>
 </ContentView>

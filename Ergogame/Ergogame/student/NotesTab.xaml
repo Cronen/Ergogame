@@ -73,7 +73,7 @@
 
                 </StackLayout>
             </Frame>
-            <StackLayout x:Name="tabcontentview" Grid.Row="0" Grid.Column="1" Grid.RowSpan="4">
+            <StackLayout x:Name="tabcontentview" Grid.Row="0" Grid.Column="1" Grid.RowSpan="4" Padding="25,50,50,25">
 
             </StackLayout>
 

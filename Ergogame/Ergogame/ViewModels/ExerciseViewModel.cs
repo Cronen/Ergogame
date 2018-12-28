@@ -39,5 +39,15 @@ namespace Ergogame.Model
                 Note_ID = result.Id;
             }
         }
+        public string GetFeedback()
+        {
+            var db = new DB_Handler();
+            var Feedback = db.GetFeedbackFromNoteID(Note_ID);
+            if (string.IsNullOrEmpty(Feedback.FeedbackText))
+            {
+                return "No feedback received yet";
+            }
+            return Feedback.FeedbackText;
+        }
     }
 }
