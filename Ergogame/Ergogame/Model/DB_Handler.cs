@@ -119,6 +119,17 @@ namespace Ergogame
             }
             return reList;
         }
+        public TopicTask GetTopicTaskFromID(int id)
+        {
+            try
+            {
+                return db.GetWithChildren<TopicTask>(id);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
         public Note GetNoteFromExcerise(Exercise e)
         {
             Note result;
@@ -134,6 +145,7 @@ namespace Ergogame
         }
         public TopicTask GetFirstTopicTask()
         {
+            //this method is for testing
             return db.GetAllWithChildren<TopicTask>()[0];
         }
         public void InsertOrUpdateNote(string text, int noteID, int exID)
@@ -142,6 +154,15 @@ namespace Ergogame
             if (noteID != 0)
             {
                 toSave.Id = noteID;
+            }
+            db.InsertOrReplaceWithChildren(toSave);
+        }
+        public void InsertOrUpdateFeedback(string text, int noteID, int fID)
+        {
+            Feedback toSave = new Feedback(text, 1, noteID);
+            if (fID != 0)
+            {
+                toSave.Id = fID;
             }
             db.InsertOrReplaceWithChildren(toSave);
         }

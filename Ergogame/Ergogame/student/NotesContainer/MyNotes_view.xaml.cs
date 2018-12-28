@@ -83,8 +83,11 @@ namespace Ergogame.student.NotesContainer
             DB_Handler DB_Class = new DB_Handler();
             var note = ((Editor) sender).Text;
             var exerciseView = exList.First(ex => ex.IsFocused);
-            exerciseView.Notes = note;
-            DB_Class.InsertOrUpdateNote(exerciseView.Notes, exerciseView.Note_ID, exerciseView.ID);
+            if (exerciseView.Notes != note)
+            {
+                exerciseView.Notes = note;
+                DB_Class.InsertOrUpdateNote(exerciseView.Notes, exerciseView.Note_ID, exerciseView.ID);
+            }            
         }
     }
 }

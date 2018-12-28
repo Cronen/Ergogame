@@ -16,10 +16,9 @@ namespace Ergogame.student
     {
 
         private ITask task;
-        public NotesTab()
+        public NotesTab(ITask TaskFromView)
         {
-            DB_Handler db = new DB_Handler();
-            task = db.GetFirstTopicTask();
+            task = TaskFromView;
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             tabcontentview.Children.Add(new MyNotes_view(task));
@@ -50,7 +49,7 @@ namespace Ergogame.student
             SL_feed.BackgroundColor = (Color)Application.Current.Resources["darkgreenColor"];
             LB_feed.TextColor = Color.White;
             tabcontentview.Children.Clear();
-            tabcontentview.Children.Add(new Feedback_view());
+            tabcontentview.Children.Add(new Feedback_view(task));
         }
 
         private void Solution(object sender, EventArgs e)
@@ -73,6 +72,12 @@ namespace Ergogame.student
             LB_notes.TextColor = (Color)Application.Current.Resources["darkgreenColor"];
             LB_solu.TextColor = (Color)Application.Current.Resources["darkgreenColor"];
 
+            RefreshTask();
+        }
+        private void RefreshTask()
+        {
+            DB_Handler db = new DB_Handler();
+            task = db.GetTopicTaskFromID(task.Id);
         }
     }
 }

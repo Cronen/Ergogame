@@ -57,13 +57,13 @@ namespace Ergogame.student
             }
             else if (item.Completed.Year != 1)
             {
-                await this.Navigation.PushModalAsync(new Notes());
+                await this.Navigation.PushModalAsync(new NotesTab(item));
                 return;
             }
 
             if (item.GetType().Equals(typeof(StudentTask)))
             {
-                await this.Navigation.PushModalAsync(new student.TaskDetailPage());
+                await this.Navigation.PushModalAsync(new TaskDetailPage());
 
             }
             else if ((item.GetType().Equals(typeof(TopicTask))))

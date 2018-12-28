@@ -41,7 +41,6 @@ namespace Ergogame.student
             {
                 if (exercise == exer)
                 {
-                    //exercise.IsFocused = true;
                     exer.IsFocused = true;
                     SelectedExercise = exercise;
                     Notes_input.Text = exercise.Notes;
@@ -70,24 +69,28 @@ namespace Ergogame.student
             }
             if (AllCompleted)
             {
-                await Navigation.PushModalAsync(new Notes());
+                await Navigation.PushModalAsync(new NotesTab(Task));
             }
             else
             {
                 var answer = await DisplayAlert("Warning", "Not all exercises are completed. Continue anyway?", "Yes", "No");
                 if (answer)
                 {
-                    await Navigation.PushModalAsync(new Notes());
+                    await Navigation.PushModalAsync(new NotesTab(Task));
                 }
             }
         }
 
         private void Complete_Exercise(object sender, EventArgs e)
         {
-            SelectedExercise.Notes = Notes_input.Text;
-            SelectedExercise.Completed = true;
-            DB_Class.InsertOrUpdateNote(SelectedExercise.Notes, SelectedExercise.Note_ID, SelectedExercise.ID);
-            RefreshListView();
+            if (SelectedExercise.Notes != Notes_input.Text)
+            {
+                SelectedExercise.Notes = Notes_input.Text;
+                SelectedExercise.Completed = true;
+                DB_Class.InsertOrUpdateNote(SelectedExercise.Notes, SelectedExercise.Note_ID, SelectedExercise.ID);
+                RefreshListView();
+            }
+
         }
         private void RefreshListView()
         {

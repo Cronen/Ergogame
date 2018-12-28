@@ -9,12 +9,14 @@ namespace Ergogame.Model
     {
         public int ID { get; set; }
         public int Note_ID { get; set; }
+        public int Feed_ID { get; set; }
         public string Name { get; set; }
         public string Solution { get; set; }
         public bool Completed { get; set; }
         public bool IsFocused { get; set; }
         public string Description { get; set; }
         public string Notes { get; set; }
+        public string FeedbackText { get; set; }
 
         public ExerciseViewModel(Exercise e)
         {
@@ -22,14 +24,14 @@ namespace Ergogame.Model
             Solution = e.Solution;
             Description = e.Description;
             ID = e.Id;
-            SetNotes(e);
+            SetValues(e);
             if (string.IsNullOrEmpty(Notes))
                 Completed = false;
             else
                 Completed = true;
             IsFocused = false;
         }
-        private void SetNotes(Exercise e)
+        private void SetValues(Exercise e)
         {
             var db = new DB_Handler();
             var result = db.GetNoteFromExcerise(e);
@@ -38,16 +40,27 @@ namespace Ergogame.Model
                 Notes = result.Notes;
                 Note_ID = result.Id;
             }
+            var feed = db.GetFeedbackFromNoteID(Note_ID);
+            if (Feed_ID != 0)
+            {
+                Feed_ID = feed.Id;
+                FeedbackText = feed.FeedbackText;
+            }      
         }
         public string GetFeedback()
         {
             var db = new DB_Handler();
-            var Feedback = db.GetFeedbackFromNoteID(Note_ID);
-            if (string.IsNullOrEmpty(Feedback.FeedbackText))
+            var result = db.GetFeedbackFromNoteID(Note_ID);
+            if (!result.Equals(null))
             {
-                return "No feedback received yet";
+                Feed_ID = result.Id;
+                FeedbackText = result.FeedbackText;
             }
-            return Feedback.FeedbackText;
+            if (string.IsNullOrEmpty(FeedbackText))
+            {
+                return "No feedback yet";
+            }
+            return FeedbackText;
         }
     }
 }
