@@ -279,6 +279,12 @@
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\listdark.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\listdark.imageset\listdark.png" />
+    <ImageAsset Include="Assets.xcassets\YoutubeVidThumb.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\YoutubeVidThumb.imageset\YoutubeVidThumb.png" />
+    <ImageAsset Include="Assets.xcassets\squaredark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\squaredark.imageset\squaredark.png" />
+    <ImageAsset Include="Assets.xcassets\squaredark.imageset\squaredark%402x.png" />
+    <ImageAsset Include="Assets.xcassets\squaredark.imageset\squaredark%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -305,5 +311,7 @@
   <ItemGroup>
     <Folder Include="Assets.xcassets\backgroundimagepattern.imageset\" />
     <Folder Include="Assets.xcassets\listdark.imageset\" />
+    <Folder Include="Assets.xcassets\YoutubeVidThumb.imageset\" />
+    <Folder Include="Assets.xcassets\squaredark.imageset\" />
   </ItemGroup>
 </Project>

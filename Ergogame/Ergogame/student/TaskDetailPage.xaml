@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ergogame.student.TaskDetailPage">
@@ -34,7 +34,7 @@
                                 <Label TextColor="{StaticResource darkgreenColor}" Text="Name: John Doe"></Label>
                                 <Label TextColor="{StaticResource darkgreenColor}" Text="Age: 47"></Label>
                             </StackLayout>
-                            <Image Source="pexelsphoto25682.png" HeightRequest="145"></Image>
+                            <Image Source="patient.png" HeightRequest="145"></Image>
                         </FlexLayout>
                         <StackLayout Margin="0, 15">
                             <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor ut felis posuere ornare quis a tellus. Orci varius natoque penatibus et magnis dis parturient Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor ut felis posuere ornare quis a tellus. Orci varius natoque penatibus et magnis dis" ></Label>
@@ -45,7 +45,7 @@
                         </StackLayout>
                       
                         <StackLayout WidthRequest="75">
-                            <Button BackgroundColor="{StaticResource lightgreenColor }" TextColor="{StaticResource whiteColor}" ContentLayout="right,0" HeightRequest="75" WidthRequest="175"   HorizontalOptions="End" VerticalOptions="End" Text="Next" Image="arrowleftwhite.png" Clicked="ToTask"/>
+                            <Button BackgroundColor="{StaticResource lightgreenColor }" TextColor="{StaticResource whiteColor}" ContentLayout="right,0" HeightRequest="75" WidthRequest="175"   HorizontalOptions="End" VerticalOptions="End" Text="Next" Image="arrowrightwhite.png" Clicked="ToTask"/>
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
