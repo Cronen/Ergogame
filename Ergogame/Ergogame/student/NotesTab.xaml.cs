@@ -79,5 +79,10 @@ namespace Ergogame.student
             DB_Handler db = new DB_Handler();
             task = db.GetTopicTaskFromID(task.Id);
         }
+
+        private async void BackToTask(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new TaskList());
+        }
     }
 }
