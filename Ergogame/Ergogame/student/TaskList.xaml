@@ -29,6 +29,17 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS">
+                <On.Value>
+                    0, 30, 0, 0
+                </On.Value>
+            </On>
+        </OnPlatform>
+        
+    </ContentPage.Padding>
     <ContentPage.Content>
         <Grid BackgroundColor="White">
             <Grid.RowDefinitions>
