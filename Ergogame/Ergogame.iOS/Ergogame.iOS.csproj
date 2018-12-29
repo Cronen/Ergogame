@@ -278,13 +278,16 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\listdark.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\listdark.imageset\listdark.png" />
     <ImageAsset Include="Assets.xcassets\YoutubeVidThumb.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\YoutubeVidThumb.imageset\YoutubeVidThumb.png" />
     <ImageAsset Include="Assets.xcassets\squaredark.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\squaredark.imageset\squaredark.png" />
     <ImageAsset Include="Assets.xcassets\squaredark.imageset\squaredark%402x.png" />
     <ImageAsset Include="Assets.xcassets\squaredark.imageset\squaredark%403x.png" />
+    <ImageAsset Include="Assets.xcassets\listdark.imageset\listdark.pdf" />
+    <ImageAsset Include="Assets.xcassets\listdark.imageset\listdark%402x.png" />
+    <ImageAsset Include="Assets.xcassets\listdark.imageset\listdark%403x.png" />
+    <ImageAsset Include="Assets.xcassets\listdark.imageset\listdark.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
