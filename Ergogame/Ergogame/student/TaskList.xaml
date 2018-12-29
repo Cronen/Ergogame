@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ergogame.student.TaskList">
@@ -22,7 +22,7 @@
                 <Setter Property="Margin" Value="0,40,0,0" />
             </Style>
             <Style x:Key="Arrow" TargetType="Image">
-                <Setter Property="Source" Value="arrowleftblue.png" />
+                <Setter Property="Source" Value="arrowrightblue.png" />
             </Style>
             <Style x:Key="NoArrow" TargetType="Image">
                 <Setter Property="Source" Value="" />

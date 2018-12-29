@@ -277,6 +277,8 @@
     <ImageAsset Include="Assets.xcassets\backgroundimagepattern.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\listdark.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\listdark.imageset\listdark.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -302,5 +304,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\backgroundimagepattern.imageset\" />
+    <Folder Include="Assets.xcassets\listdark.imageset\" />
   </ItemGroup>
 </Project>
