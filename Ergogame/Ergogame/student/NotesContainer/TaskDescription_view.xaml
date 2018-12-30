@@ -3,10 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ergogame.student.NotesContainer.TaskDescription_view" BackgroundColor="DarkOrange">
   <ContentView.Content>
-      <StackLayout>
-          <Label Text="TaskDescription"
-                 VerticalOptions="CenterAndExpand" 
-                 HorizontalOptions="CenterAndExpand" />
-      </StackLayout>
+        <StackLayout  Orientation="Horizontal" Spacing="0" BackgroundColor="#fdfdfd" >
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="Clinical dialog" FontSize="42"></Label>
+                    <FlexLayout Direction="Row" JustifyContent="SpaceBetween" AlignItems="Center">
+                        <StackLayout>
+                            <Label TextColor="{StaticResource darkgreenColor}" Text="Patient info"></Label>
+                            <Label TextColor="{StaticResource darkgreenColor}" Text="Name: John Doe"></Label>
+                            <Label TextColor="{StaticResource darkgreenColor}" Text="Age: 47"></Label>
+                        </StackLayout>
+                        <Image Source="patient.png" HeightRequest="145"></Image>
+                    </FlexLayout>
+                    <StackLayout Margin="0, 15">
+                        <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor ut felis posuere ornare quis a tellus. Orci varius natoque penatibus et magnis dis parturient Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor ut felis posuere ornare quis a tellus. Orci varius natoque penatibus et magnis dis" ></Label>
+                    </StackLayout>
+                    <StackLayout Margin="0, 50">
+                        <Label Text="Patient log" FontSize="32"></Label>
+                        <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis tortor ut felis posuere ornare quis a tellus. Orci varius natoque penatibus et magnis dis parturient Orci varius natoque penatibus et magnis dis parturientOrci varius natoque penatibus et magnis dis parturientOrci varius natoque penatibus et magnis dis parturient"></Label>
+                    </StackLayout>
+
+                    <!--<StackLayout WidthRequest="75">
+                        <Button BackgroundColor="{StaticResource lightgreenColor }" TextColor="{StaticResource whiteColor}" ContentLayout="right,0" HeightRequest="75" WidthRequest="175"   HorizontalOptions="End" VerticalOptions="End" Text="Next" Image="arrowrightwhite.png" />
+                    </StackLayout>-->
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
     </ContentView.Content>
 </ContentView>
