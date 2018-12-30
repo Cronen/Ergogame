@@ -55,15 +55,21 @@
                 <Button BackgroundColor="{StaticResource lightgreenColor }" TextColor="{StaticResource whiteColor}" ContentLayout="right,0" HeightRequest="75" WidthRequest="175"   HorizontalOptions="Center" VerticalOptions="End" Text="Submit" Image="arrowrightwhite.png" Clicked="Submit"/>
 
             </StackLayout>
-            <ScrollView Grid.Row="0" Grid.Column="1">
-                <StackLayout x:Name="Content_SL_Exercise"  BackgroundColor="{StaticResource bgColor}" Padding="15,75,15,0" >
-
-                </StackLayout>
-            </ScrollView>
-               <StackLayout x:Name="Notes" Grid.Row="1" Grid.Column="1" BackgroundColor="#f2f2f2" Padding="15,10,15,25" Orientation="Horizontal">
-                <Editor x:Name="Notes_input" HorizontalOptions="Start" WidthRequest="700" HeightRequest="150" Keyboard="Text" Completed="Complete_Exercise"/>
+         
+              <ScrollView  Grid.Row="1" Grid.Column="1">
+               <StackLayout x:Name="Notes"  BackgroundColor="#f2f2f2" Padding="15,10,15,25" Orientation="Horizontal" >
+                  <FlexLayout Direction="Column"  >
+                   <Editor x:Name="Notes_input" HorizontalOptions="Start" WidthRequest="700" HeightRequest="150" Keyboard="Text" Completed="Complete_Exercise"/>
                 <Button Text="Mark as completed" Clicked="Complete_Exercise"  HorizontalOptions="End" VerticalOptions="End" TextColor="White" BackgroundColor="{StaticResource lightgreenColor}"/>
+                    </FlexLayout>
+           </StackLayout>
+          </ScrollView>
+            <ScrollView IsClippedToBounds="True" Grid.Row="0" Grid.Column="1">
+                <StackLayout x:Name="Content_SL_Exercise"  BackgroundColor="{StaticResource bgColor}" Padding="15,75,15,0" >
             </StackLayout>
+            </ScrollView>
+           
+              
         </Grid>
     </ContentPage.Content>
 </ContentPage>
