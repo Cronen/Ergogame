@@ -42,19 +42,19 @@ namespace Ergogame.student.NotesContainer
         {
             Button reBtn = new Button();
             reBtn.Text = ex.Name;
-            reBtn.CornerRadius = 5;
+            reBtn.CornerRadius = 0;
             reBtn.Margin = 0;
-            reBtn.BorderColor = (Color)Application.Current.Resources["darkgreenColor"];
-            reBtn.BorderWidth = 1;
+            reBtn.BorderColor = (Color)Application.Current.Resources["lightgreenColor"];
+            reBtn.BorderWidth = 0.5;
             if (ex.IsFocused)
             {
-                reBtn.BackgroundColor = (Color)Application.Current.Resources["darkgreenColor"];
+                reBtn.BackgroundColor = (Color)Application.Current.Resources["lightgreenColor"];
                 reBtn.TextColor = Color.White;
             }
             else
             {
                 reBtn.BackgroundColor = Color.White;
-                reBtn.TextColor = (Color)Application.Current.Resources["darkgreenColor"];
+                reBtn.TextColor = (Color)Application.Current.Resources["lightgreenColor"];
             }
             reBtn.Clicked += (sender, args) => ChangeContent(ex);
             return reBtn;

@@ -25,8 +25,7 @@ namespace Ergogame.student.NotesContainer
 		        {
 		            exList.Add(new ExerciseViewModel(exercise));
 		        }
-		        LB_NotesField.Text = exList[0].Notes;
-		        //ED_Feedback.Text = exList[0].GetFeedback();
+                LB_solu.Text = exList[0].Solution;
 		        exList[0].IsFocused = true;
 		        GenerateList();
 		    }
@@ -76,8 +75,7 @@ namespace Ergogame.student.NotesContainer
 	            }
 	            SL_list.Children.Add(GenerateButton(exVM));
 	        }
-	        LB_NotesField.Text = ex.Notes;
-	        //ED_Feedback.Text = ex.GetFeedback();
+            LB_solu.Text = ex.Solution;
 	    }
     }
 }

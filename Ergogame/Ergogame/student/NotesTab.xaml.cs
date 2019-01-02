@@ -27,7 +27,7 @@ namespace Ergogame.student
         private void TaskDescription(object sender, EventArgs e)
         {
             ClearBG();
-            SL_desc.BackgroundColor = (Color)Application.Current.Resources["darkgreenColor"];
+            SL_desc.BackgroundColor = (Color)Application.Current.Resources["lightgreenColor"];
             LB_desc.TextColor = Color.White;
             tabcontentview.Children.Clear();
             tabcontentview.Children.Add(new TaskDescription_view());
@@ -37,7 +37,7 @@ namespace Ergogame.student
         private void MyNotes(object sender, EventArgs e)
         {
             ClearBG();
-            SL_notes.BackgroundColor = (Color)Application.Current.Resources["darkgreenColor"];
+            SL_notes.BackgroundColor = (Color)Application.Current.Resources["lightgreenColor"];
             LB_notes.TextColor = Color.White;
             tabcontentview.Children.Clear();
             tabcontentview.Children.Add(new MyNotes_view(task));
@@ -46,7 +46,7 @@ namespace Ergogame.student
         private void Feedback(object sender, EventArgs e)
         {
             ClearBG();
-            SL_feed.BackgroundColor = (Color)Application.Current.Resources["darkgreenColor"];
+            SL_feed.BackgroundColor = (Color)Application.Current.Resources["lightgreenColor"];
             LB_feed.TextColor = Color.White;
             tabcontentview.Children.Clear();
             tabcontentview.Children.Add(new Feedback_view(task));
@@ -55,7 +55,7 @@ namespace Ergogame.student
         private void Solution(object sender, EventArgs e)
         {
             ClearBG();
-            SL_solu.BackgroundColor = (Color)Application.Current.Resources["darkgreenColor"];
+            SL_solu.BackgroundColor = (Color)Application.Current.Resources["lightgreenColor"];
             LB_solu.TextColor = Color.White;
             tabcontentview.Children.Clear();
             tabcontentview.Children.Add(new Solution_view(task));

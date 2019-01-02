@@ -63,7 +63,7 @@ namespace Ergogame.student
 
             if (item.GetType().Equals(typeof(StudentTask)))
             {
-                await this.Navigation.PushModalAsync(new TaskDetailPage());
+                await this.Navigation.PushModalAsync(new TaskDetailPage((StudentTask)item));
 
             }
             else if ((item.GetType().Equals(typeof(TopicTask))))

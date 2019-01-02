@@ -27,8 +27,8 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="0,15,0,0">
-                                    <Label Text="{Binding Name}" Style="{StaticResource ListviewExercise}">
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Padding="0,15,0,0">
+                                    <Label Text="{Binding Name}" Style="{StaticResource ListviewExercise}" HorizontalOptions="StartAndExpand">
                                         <Label.Triggers>
                                             <DataTrigger TargetType="Label" Binding="{Binding IsFocused}" Value="True">
                                                 <Setter Property="TextColor" Value="White"/>
@@ -55,21 +55,20 @@
                 <Button BackgroundColor="{StaticResource lightgreenColor }" TextColor="{StaticResource whiteColor}" ContentLayout="right,0" HeightRequest="75" WidthRequest="175"   HorizontalOptions="Center" VerticalOptions="End" Text="Submit" Image="arrowrightwhite.png" Clicked="Submit"/>
 
             </StackLayout>
-         
-              <ScrollView  Grid.Row="1" Grid.Column="1">
-               <StackLayout x:Name="Notes"  BackgroundColor="#f2f2f2" Padding="15,10,15,25" Orientation="Horizontal" >
-                  <FlexLayout Direction="Column"  >
-                   <Editor x:Name="Notes_input" HorizontalOptions="Start" WidthRequest="700" HeightRequest="150" Keyboard="Text" Completed="Complete_Exercise"/>
-                <Button Text="Mark as completed" Clicked="Complete_Exercise"  HorizontalOptions="End" VerticalOptions="End" TextColor="White" BackgroundColor="{StaticResource lightgreenColor}"/>
+
+            <ScrollView  Grid.Row="1" Grid.Column="1">
+                <StackLayout x:Name="Notes"  BackgroundColor="#f2f2f2" Padding="15,10,15,25" Orientation="Horizontal" >
+                    <FlexLayout Direction="Column"  >
+                        <Editor x:Name="Notes_input" HorizontalOptions="Start" WidthRequest="700" HeightRequest="150" Keyboard="Text" Completed="Complete_Exercise"/>
                     </FlexLayout>
-           </StackLayout>
-          </ScrollView>
+                </StackLayout>
+            </ScrollView>
             <ScrollView IsClippedToBounds="True" Grid.Row="0" Grid.Column="1">
                 <StackLayout x:Name="Content_SL_Exercise"  BackgroundColor="{StaticResource bgColor}" Padding="15,75,15,0" >
-            </StackLayout>
+                </StackLayout>
             </ScrollView>
-           
-              
+
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

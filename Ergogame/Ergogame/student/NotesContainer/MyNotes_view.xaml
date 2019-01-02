@@ -8,6 +8,7 @@
             </StackLayout>
             <StackLayout x:Name="SL_content" Padding="10" >
                 <BoxView Color="{StaticResource lightgreenColor}" HeightRequest="1" HorizontalOptions="StartAndExpand" WidthRequest="400"/>
+                <Label Text="Your Notes" Style="{StaticResource Headline}" Margin="0,25,0,0" FontAttributes="Bold"/>
                 <Editor x:Name="ED_NotesField" Text="MyNotes" VerticalOptions="Start" HorizontalOptions="Start" Style="{StaticResource NormTxt}" WidthRequest="400" HeightRequest="200" Completed="ED_EditNote"/>
                 <Label Text="Feedback" Style="{StaticResource Headline}" Margin="0,25,0,0" FontAttributes="Bold"/>
                 <Label x:Name="LB_Feedback" Text="Feedback here" VerticalOptions="Start" HorizontalOptions="Start" Style="{StaticResource NormTxt}"/>

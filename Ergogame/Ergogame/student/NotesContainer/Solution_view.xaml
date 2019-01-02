@@ -8,7 +8,7 @@
           </StackLayout>
           <StackLayout x:Name="SL_content" Padding="10" >
               <BoxView Color="{StaticResource lightgreenColor}" HeightRequest="1" HorizontalOptions="StartAndExpand" WidthRequest="500"/>
-              <Label x:Name="LB_NotesField" Text="Notes from other student" VerticalOptions="Start" HorizontalOptions="Start" Style="{StaticResource NormTxt}" />
+              <Label x:Name="LB_solu" Text="Solution" VerticalOptions="Start" HorizontalOptions="Start" Style="{StaticResource NormTxt}"/>
              </StackLayout>
       </StackLayout>
     </ContentView.Content>
