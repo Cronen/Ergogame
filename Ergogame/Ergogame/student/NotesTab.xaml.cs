@@ -58,7 +58,7 @@ namespace Ergogame.student
             SL_solu.BackgroundColor = (Color)Application.Current.Resources["darkgreenColor"];
             LB_solu.TextColor = Color.White;
             tabcontentview.Children.Clear();
-            tabcontentview.Children.Add(new Solution_view());
+            tabcontentview.Children.Add(new Solution_view(task));
         }
         private void ClearBG()
         {
