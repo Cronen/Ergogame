@@ -15,7 +15,7 @@
           
             <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="#fff">
                 <StackLayout HeightRequest="75" Margin="50, 30, 20, 50">
-                    <Label Text="Dysfagi" FontSize="42"></Label>
+                    <Label Text="Ergoterapi - Personlighedsforstyrrelse" FontSize="22"></Label>
                 </StackLayout>
 
                 <StackLayout MinimumHeightRequest="150" Margin="50, 30, 20, 50">
